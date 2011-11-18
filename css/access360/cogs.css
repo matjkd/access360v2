@@ -22,11 +22,16 @@
 }
 
 
-#cog1div {
+#cog1div, #cog1logodiv{
     position:absolute;
     z-index:1000;
     top:00px;
     left:50px;
+      width:300px;
+    height:300px;
+}
+#cog1logodiv{
+    z-index: 2000;
 }
 #cog1{
     width:300px;
@@ -43,6 +48,17 @@
     width:170px;
     height:170px;
 }
+#cog3div, #cog3logodiv{
+    position:absolute;
+    z-index:1000;
+    top:250px;
+    left:250px;
+     width:150px;
+    height:150px;
+}
+#cog3logodiv{
+      z-index:2000;
+}
 
 #coglogo3 {
     position:absolute;
@@ -54,12 +70,7 @@
     left:30px;
 
 }
-#cog3div {
-    position:absolute;
-    z-index:1000;
-    top:250px;
-    left:250px;
-}
+
 #cog3 {
 
     width:210px;

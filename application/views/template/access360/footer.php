@@ -19,6 +19,7 @@
 
 <script src="<?= base_url() ?>js/script.js"></script>
 <script src="<?= base_url() ?>js/access360/script.js"></script>
+<script src="<?= base_url() ?>js/access360/cogs.js"></script>
 <!-- end concatenated and minified scripts-->
 
 

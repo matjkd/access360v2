@@ -46,27 +46,6 @@ jQuery(function() {
 
 
 
-//jquery cycle
-$(document).ready(function() {
-    $('.cycle').cycle({
-        fx: 'fade', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
-        speedIn:  2000, 
-        speedOut: 2000, 
-        timeout:   10000
-    });
-//$('.cycle').css("display", "block");
-});
-
-$(document).ready(function() {
-    $('.slideshow').cycle({
-        speedIn:  2000,
-        speedOut: 2000,
-        timeout:   10000,
-        fx: 'fade' // choose your transition type, ex: fade, scrollUp, shuffle, etc...
-    });
-    $('.slideshow').css("display", "block");
-});
-
 /**
  * --------------------------------------------------------------------
  * jQuery-Plugin "pngFix"
@@ -216,8 +195,4 @@ $(document).ready(function() {
     });
 
 
-});
-
-$(function(){
-    $("#paginate").pagination();
 });

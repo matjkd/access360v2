@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://www.sunncamp.co.uk/';
+$config['base_url']	= 'http://www.access360.co.uk/';
 
 /*
 |--------------------------------------------------------------------------
