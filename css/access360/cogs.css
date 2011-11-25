@@ -10,14 +10,16 @@
    TODO customize this sample style
    Syntax recommendation http://www.w3.org/TR/REC-CSS2/
 */
+
+/*start of cogs 1 and 2*/
 #coglogo1 {
     position:absolute;
     z-index:2000;
-    width:200px;
-    height:200px;
+    width:220px;
+    height:220px;
     cursor:pointer;
-    top:50px;
-    left:50px;
+    top:40px;
+    left:40px;
 
 }
 
@@ -27,7 +29,7 @@
     z-index:1000;
     top:00px;
     left:50px;
-      width:300px;
+    width:300px;
     height:300px;
 }
 #cog1logodiv{
@@ -41,33 +43,44 @@
 #cog2div {
     position:absolute;
     z-index:999;
-    top:170px;
+    top:200px;
+    left:50px;
 }
 #cog2 {
 
-    width:170px;
-    height:170px;
+    width:200px;
+    height:200px;
 }
+
+/*end of cogs 1 and 2*/
+
+/*cogs 3 and 4*/
 #cog3div, #cog3logodiv{
     position:absolute;
     z-index:1000;
-    top:250px;
-    left:250px;
-     width:150px;
-    height:150px;
+    top:270px;
+    left:230px;
+    width:210px;
+    height:210px;
 }
 #cog3logodiv{
-      z-index:2000;
+    z-index:2000;
+    background-image: url('/images/cogs/360experientialOver.png')  ;
+    background-repeat:no-repeat;
+
+    background-position:center; 
+
 }
 
 #coglogo3 {
     position:absolute;
     z-index:2000;
-    width:150px;
-    height:150px;
+    width:156px;
+    height:153px;
     cursor:pointer;
-    top:30px;
-    left:30px;
+    top:29px;
+    left:27px;
+
 
 }
 
@@ -80,11 +93,288 @@
 #cog4div {
     position:absolute;
     z-index:999;
-    top:310px;
-    left:150px;
+    top:390px;
+    left:160px;
 }
 #cog4 {
 
-    width:150px;
-    height:150px;
+    width:170px;
+    height:170px;
+}
+/*end of cogs 3 and 4*/
+
+
+/*cogs 5 and 6*/
+#cog5div, #cog5logodiv{
+    position:absolute;
+    z-index:1000;
+    top:10px;
+    left:410px;
+    width:210px;
+    height:210px;
+}
+#cog5logodiv{
+    z-index:2000;
+    background-image: url('/images/cogs/360exhibitionsOver.png')  ;
+    background-repeat:no-repeat;
+
+    background-position:center; 
+}
+
+#coglogo5 {
+    position:absolute;
+    z-index:2000;
+    width:156px;
+    height:153px;
+    cursor:pointer;
+    top:29px;
+    left:27px;
+
+}
+
+#cog5 {
+
+    width:210px;
+    height:210px;
+}
+
+#cog6div {
+    position:absolute;
+    z-index:999;
+    top:130px;
+    left:330px;
+}
+#cog6 {
+
+    width:190px;
+    height:190px;
+}
+/*end of cogs 5 and 6*/
+
+
+/*cogs 7 and 8*/
+#cog7div, #cog7logodiv{
+    position:absolute;
+    z-index:1000;
+    top:230px;
+    left:440px;
+    width:210px;
+    height:210px;
+}
+#cog7logodiv{
+    z-index:2000;
+    background-image: url('/images/cogs/360posOver.png')  ;
+    background-repeat:no-repeat;
+
+    background-position:center; 
+}
+
+#coglogo7 {
+    position:absolute;
+    z-index:2000;
+    width:156px;
+    height:153px;
+    cursor:pointer;
+    top:29px;
+    left:27px;
+
+}
+
+#cog7 {
+
+    width:210px;
+    height:210px;
+}
+
+#cog8div {
+    position:absolute;
+    z-index:999;
+    top:330px;
+    left:400px;
+}
+#cog8 {
+
+    width:130px;
+    height:130px;
+}
+/*end of cogs 7 and 8*/
+
+
+/*cogs 9 and 10*/
+#cog9div, #cog9logodiv{
+    position:absolute;
+    z-index:1000;
+    top:100px;
+    left:640px;
+    width:210px;
+    height:210px;
+}
+#cog9logodiv{
+    z-index:2000;
+    background-image: url('/images/cogs/360signageOver.png')  ;
+    background-repeat:no-repeat;
+
+    background-position:center; 
+}
+
+#coglogo9 {
+    position:absolute;
+    z-index:2000;
+    width:156px;
+    height:153px;
+    cursor:pointer;
+    top:29px;
+    left:27px;
+
+}
+
+#cog9 {
+
+    width:210px;
+    height:210px;
+}
+
+#cog10div {
+    position:absolute;
+    z-index:999;
+    top:180px;
+    left:570px;
+}
+#cog10 {
+
+    width:130px;
+    height:130px;
+}
+/*end of cogs 9 and 10*/
+
+
+/*cogs 11 and 12*/
+#cog11div, #cog11logodiv{
+    position:absolute;
+    z-index:1000;
+    top:340px;
+    left:620px;
+    width:210px;
+    height:210px;
+}
+#cog11logodiv{
+    z-index:2000;
+    background-image: url('/images/cogs/360digitalsignageOver.png')  ;
+    background-repeat:no-repeat;
+
+    background-position:center; 
+}
+
+#coglogo11 {
+    position:absolute;
+    z-index:2000;
+    width:156px;
+    height:153px;
+    cursor:pointer;
+    top:29px;
+    left:27px;
+
+}
+
+#cog11 {
+
+    width:210px;
+    height:210px;
+}
+
+#cog12div {
+    position:absolute;
+    z-index:999;
+    top:280px;
+    left:670px;
+}
+#cog12 {
+
+    width:130px;
+    height:130px;
+}
+/*end of cogs 11 and 12*/
+
+/*news cog */
+#newscogdiv, #newscoglogodiv{
+    position:absolute;
+    z-index:2100;
+    top:410px;
+    left:0px;
+    width:170px;
+    height:170px;
+}
+#newscoglogodiv{
+    z-index:3000;
+    background-image: url('/images/cogs/newsOver.png')  ;
+    background-repeat:no-repeat;
+
+    background-position:center; 
+}
+#newscoglogo {
+    position:absolute;
+    z-index:2000;
+    width:128px;
+    height:128px;
+    cursor:pointer;
+    top:21px;
+    left:21px;
+
+}
+
+
+#newscog{
+    width:170px;
+    height:170px;
+}
+/* end of news cog */
+
+/*contact cog */
+#contactcogdiv, #contactcoglogodiv{
+    position:absolute;
+    z-index:2100;
+    top:410px;
+    left:830px;
+    width:170px;
+    height:170px;
+}
+#contactcoglogodiv{
+    z-index:3000;
+    background-image: url('/images/cogs/contactOver.png')  ;
+    background-repeat:no-repeat;
+
+    background-position:center; 
+}
+#contactcoglogo {
+    position:absolute;
+    z-index:2000;
+    width:128px;
+    height:128px;
+    cursor:pointer;
+    top:21px;
+    left:21px;
+
+}
+
+
+#contactcog{
+    width:170px;
+    height:170px;
+}
+/* end of contact cog */
+
+
+/*background cogs*/
+#backcog1div{
+    position:absolute;
+    z-index:500;
+    top:210px;
+    left:230px;
+    width:120px;
+    height:120px;
+}
+
+#backcog1{
+    width:120px;
+    height:120px;
 }

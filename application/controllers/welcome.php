@@ -117,6 +117,22 @@ class Welcome extends MY_Controller {
 		$this->load->view('template/main');
 
 	}
+            function ajax_content()
+            {
+                $segment_active = $this->uri->segment(3);
+		if ($segment_active!=NULL)
+			{
+				$data['menu'] = $this->uri->segment(3);
+			}
+		else
+			{
+				$data['menu'] = 'home';
+			}
+
+		$data['content'] = $this->content_model->get_content($data['menu']);
+                $this->load->vars($data);
+		$this->load->view('template/ajax');
+            }
 
 	function login()
 	{

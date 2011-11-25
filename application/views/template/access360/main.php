@@ -13,6 +13,7 @@
     </head>
 
     <body>
+        <?=$this->load->view('global/access360/modals')?>
         <div id="header_container">
             <div id="header">
 
@@ -45,9 +46,10 @@
             <div class="container_24" id="footer">
                 <div class="grid_18">
                     <?= $this->load->view('global/access360/links') ?>
+                    
                 </div>
                 <div class="grid_6">
-                    <?= $this->load->view('global/access360/social_icons') ?>
+                    
                 </div>
             </div>
 
@@ -57,13 +59,13 @@
 
         <div  id="backfooter" >
             <div class="container_24" >
-                <div class="grid_14">
-                    <?= $this->load->view('global/access360/seo_menu') ?>
-
+                <div class="grid_7">
+                 
+<?= $this->load->view('global/access360/social_icons') ?>
                 </div>
 
-                <div class="grid_10">
-                    <?= $this->load->view('global/access360/footer_menu') ?>
+                <div class="grid_17">
+                <img src="<?=base_url()?>images/logos/explore.png"/>
                 </div>
 
             </div>

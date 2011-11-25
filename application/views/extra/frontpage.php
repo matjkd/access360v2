@@ -1,29 +1,56 @@
-<div style="clear:both; display:block; border-top: solid 1px #aaaaaa; margin-top:20px; padding-top:20px;">
-    
-    
-    <div style="float:left; width:220px; margin-right:20px;">
-    
-    <h2>G.P.S Tracking</h2>
-<p>
-    
-We use many methods to ensure distribution was successful. From on the spot checks
-from Supervisors to online tracking to view the distributors every step. Which provides us with guaranteed 
-distribution for peace of mind?  Flyerdirect has invested a lot of money in state of the art software and hardware,
-giving you the best returns from your leaflet distribution campaign.
-</p>   
-
-</div>
-
-
-<div style="float:left; width:220px;">
-    <h2>Supervised delivery</h2>
-<p>
-Flyerdirect employ Supervisors with great knowledge of streets and postcodes enabling
-    them to reach the distributors for on the spot checks on regular intervals. Flyerdirect has invested a lot of time
-    training the supervisors to guarantee the perfect leaflet distribution campaign for new and existing clients.
-</p>
-
-</div>
-    </div>
+<script type="text/javascript">
         
-        <div style="clear:both"></div>
+$(document).ready(function() {
+    $('.slideshow').cycle({
+		fx: 'fade', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+                timeout: 3000
+	});
+});
+
+$(document).ready(function() {
+    $('.slideshow2').cycle({
+		fx: 'fade', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+                 timeout: 3000,
+                 delay:1500
+	});
+});
+</script>
+        
+<style>
+    
+    .slideshow, .slideshow2  {
+        font-size: 1.8em;
+       position:relative;
+        font-weight: bold;
+    width:440px;
+          
+           margin:30px auto;
+        
+    }
+    
+    .center {
+        display:block;
+    }
+    .slideshow p, .slideshow2 p {
+        width:440px;
+         text-align: center;
+    }
+</style>
+        
+        <div class="slideshow" align="center">
+   <p>A 1st Class Dedicated Service</p>
+  <p>Total Client Satisfaction</p>
+    <p>The Impossible</p>
+    <p>Fast Responses</p>
+    <p>Alternative Solutions</p>
+</div>
+
+<div class="slideshow2" align="center">
+    <p>Problem Solving</p>
+<p>Total Health & Safety Compliance</p>
+    <p>Cost Effective Products</p>
+<p>100% Customer Care</p>
+   
+</div>
+
+Call us today and let us become your <em>greatest asset!</em>

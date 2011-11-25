@@ -3,7 +3,7 @@
 
 <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.js"></script>
 <script>!window.jQuery && document.write(unescape('%3Cscript src="<?= base_url() ?>js/libs/jquery-1.5.0.js"%3E%3C/script%3E'))</script>
 
 <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.js"></script>
@@ -18,8 +18,9 @@
 <script src="<?= base_url() ?>js/access360/plugins.js"></script>
 
 <script src="<?= base_url() ?>js/script.js"></script>
-<script src="<?= base_url() ?>js/access360/script.js"></script>
 <script src="<?= base_url() ?>js/access360/cogs.js"></script>
+<script src="<?= base_url() ?>js/access360/script.js"></script>
+
 <!-- end concatenated and minified scripts-->
 
 

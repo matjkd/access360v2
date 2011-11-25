@@ -1,6 +1,6 @@
 html {
 
-    background: url(/images/backgrounds/cogbackground.jpg) no-repeat top center fixed;
+    background: url(/images/backgrounds/xmas.jpg) no-repeat top center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -11,8 +11,10 @@ html {
 body {
 
     line-height:22px;
-    font-family:Verdana, Geneva, sans-serif;
-    font-size:12px;
+    /*	font:normal 16px/24px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", sans-serif;
+	font-weight: 300;*/
+	font:normal 14px/20px "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    
 }
 
 @font-face { font-family: 'spinnaker2';
@@ -26,7 +28,7 @@ p {
 
     width:960px;
     margin:20px auto;
-    height:500px;
+    height:560px;
     display:block;
     position:relative;
    
@@ -34,17 +36,18 @@ p {
     z-index:5;
 }
 h1 {
-    font-family:Verdana, Geneva, sans-serif;
+   
     font-size: 20px;
     font-style: normal; 
     font-weight: 700;
     text-shadow: none;
     text-decoration: none;
-
+color: #a72c31;
     letter-spacing: 0em;
     word-spacing: 0em;
     line-height: 1.2;
     margin-bottom:10px;
+    text-shadow:1px 1px 1px #000000;
 }
 #header_container{
   
@@ -55,15 +58,13 @@ h1 {
 
     height:42px;
     width:100%;
-    background:#2222ee;
+   
     display:block;
     position:relative;
     z-index:15;
 
-    border-bottom: solid 5px #ffffff;
-    -moz-box-shadow: 0px 6px 19px #000000;
-    -webkit-box-shadow: 0px 6px 19px #000000;
-    box-shadow: 0px 6px 19px #000000;
+  
+    
 }
 
 #footer {
@@ -75,7 +76,7 @@ h1 {
     position:relative;
 
     border-top: solid 0px #4a5b63;
-}
+}es
 #backfooter {
     display:block;
     position:absolute;
@@ -84,7 +85,7 @@ h1 {
     margin-top: -45px;
     padding-top:50px;
     width:100%;
-    height:100%;
+    height:100px;
     color: #AAA;
 
 }
@@ -109,18 +110,16 @@ h1 {
 
     width:100%;
     height:31px;
-    text-align: right;
+    text-align: left;
     font-family: sans-serif;
-    text-transform: capitalize;
-    font-weight: bolder;
+    
+   
     font-size: 14px;
     padding-top: 0px;
     border-top: solid 0px #4a5b63;
     line-height:31px;;
 
-    -moz-box-shadow: 0px 6px 19px #000000;
-    -webkit-box-shadow: 0px 6px 19px #000000;
-    box-shadow: 0px 6px 19px #000000;
+   
     z-index:25;
     display:block;
     position:relative;
@@ -141,7 +140,7 @@ h1 {
 }
 .socialicons {
     padding-top:20px;
-    float:right; position:relative; padding-right:10px;
+    float:left; position:relative; padding-right:10px;
 }
 .linkicons {
     padding-top:20px;
@@ -243,3 +242,40 @@ br
     width:185px;
     text-decoration: none;
 }
+
+/* Z-index of #mask must lower than #boxes .window */
+#mask {
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:9000;
+  background-color:#000;
+  display:none;
+  opacity:0.5;
+}
+   
+#boxes .window {
+  position:absolute;
+  width:440px;
+  height:390px;
+  display:none;
+  z-index:9999;
+    padding:20px 30px 30px 30px;
+}
+ 
+ 
+/* Customize your modal window here, you can add background image too */
+#boxes #dialog {
+  width:440px; 
+  height:390px;
+  background:url('/images/backgrounds/modalback.png') no-repeat;
+  overflow: auto;
+  padding:20px 30px 30px 30px;
+}
+.close {
+    float:right;
+    width:24px;
+    height:24px;
+    
+}
+
