@@ -13,7 +13,7 @@
     </head>
 
     <body>
-        <?=$this->load->view('global/access360/modals')?>
+        <?= $this->load->view('global/access360/modals') ?>
         <div id="header_container">
             <div id="header">
 
@@ -23,13 +23,7 @@
                 </div>
                 <div style="clear:both"></div>
 
-                <div id="menutop">
-
-                    <div style="width:960px; margin:0 auto;">
-
-                        <?= $this->load->view('global/access360/menu') ?>
-                    </div> 
-                </div>
+               
 
 
 
@@ -37,39 +31,38 @@
         </div>   
         <div id="container">
 
-<div class="container_24" id="bodycontainer">
-          
-    <?=$this->load->view('global/access360/cogs')?>
+            <div class="container_24" id="bodycontainer">
+                <?= $this->load->view('global/alert') ?>
+
+                <?= $this->load->view($main_content) ?>
 
 
-</div>
-            <div class="container_24" id="footer">
-                <div class="grid_18">
-                    <?= $this->load->view('global/access360/links') ?>
-                    
-                </div>
-                <div class="grid_6">
-                    
-                </div>
             </div>
-
 
 
         </div> 
+        <div style="clear:both"></div>
 
-        <div  id="backfooter" >
-            <div class="container_24" >
-                <div class="grid_7">
-                 
-<?= $this->load->view('global/access360/social_icons') ?>
-                </div>
+        <div class="container_24" >
+            <div class="grid_6">
 
-                <div class="grid_17">
-                <img src="<?=base_url()?>images/logos/explore.png"/>
-                </div>
-
+                <?= $this->load->view('global/access360/social_icons') ?>
             </div>
+
+            <div class="grid_18">
+                <img src="<?= base_url() ?>images/logos/explore.png"/>
+            </div>
+
         </div>
+        
+         <div id="menutop" style="clear:both;">
+
+                    <div style="width:960px; margin:0 auto;">
+
+                        <?= $this->load->view('global/access360/menu') ?>
+                    </div> 
+                </div>
+
 
         <!--! end of #container -->
         <?= $this->load->view('template/access360/footer') ?>

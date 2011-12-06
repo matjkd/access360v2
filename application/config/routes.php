@@ -38,7 +38,7 @@
 |
 */
 
-$route['default_controller'] = "welcome";
+$route['default_controller'] = "welcome/main";
 $route['about'] = '/welcome/home';
 $route['menu'] = 'menus/list_menus';
 $route['gallery'] = '/welcome/home';
@@ -51,6 +51,7 @@ $route['charity'] = '/welcome/home';
 $route['services'] = '/welcome/home';
 $route['design'] = '/welcome/home';
 $route['print'] = '/welcome/home';
+$route['news'] = '/welcome/news';
 $route['404_override'] = '';
 
 

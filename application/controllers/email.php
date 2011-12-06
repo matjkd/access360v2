@@ -36,14 +36,14 @@ class Email extends My_Controller {
 
 
             $this->session->set_flashdata('message', validation_errors());
-            redirect('welcome/main/contact', 'refresh');
+            redirect('welcome/main');
         } else {
 
             // check captcha
             // if it returns true the captcha has failed
             if ($this->captcha_model->check($word, $ip_address, $time)) {
                 $this->session->set_flashdata('message', 'The captcha was wrong');
-                redirect('welcome/main/contact', 'refresh');
+                redirect('welcome/main');
             }
 
             // end check captcha	

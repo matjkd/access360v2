@@ -28,7 +28,7 @@ p {
 
     width:960px;
     margin:20px auto;
-    height:560px;
+    min-height:560px;
     display:block;
     position:relative;
    
@@ -47,7 +47,7 @@ color: #a72c31;
     word-spacing: 0em;
     line-height: 1.2;
     margin-bottom:10px;
-    text-shadow:1px 1px 1px #000000;
+    
 }
 #header_container{
   
@@ -110,11 +110,8 @@ color: #a72c31;
 
     width:100%;
     height:31px;
-    text-align: left;
-    font-family: sans-serif;
-    
+    text-align: right;
    
-    font-size: 14px;
     padding-top: 0px;
     border-top: solid 0px #4a5b63;
     line-height:31px;;
@@ -131,7 +128,9 @@ color: #a72c31;
 }
 #menutop li {
     display:inline;
-    padding-right:25px;
+    padding-right:15px;
+    padding-left:15px;
+    border-right: 1px solid #ffffff;
 }
 
 #menutop a {
@@ -262,6 +261,25 @@ br
   z-index:9999;
     padding:20px 30px 30px 30px;
 }
+
+#contactmask {
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:9000;
+  background-color:#000;
+  display:none;
+  opacity:0.5;
+}
+   
+#contactboxes .contactwindow {
+  position:absolute;
+  width:440px;
+  height:390px;
+  display:none;
+  z-index:9999;
+    padding:20px 30px 30px 30px;
+}
  
  
 /* Customize your modal window here, you can add background image too */
@@ -269,7 +287,17 @@ br
   width:440px; 
   height:390px;
   background:url('/images/backgrounds/modalback.png') no-repeat;
-  overflow: auto;
+  overflow: none;
+  padding:20px 30px 30px 30px;
+}
+
+ 
+/* Customize your modal window here, you can add background image too */
+#contactboxes #contactdialog {
+  width:440px; 
+  height:390px;
+  background:url('/images/backgrounds/modalback.png') no-repeat;
+  overflow: none;
   padding:20px 30px 30px 30px;
 }
 .close {
@@ -278,4 +306,22 @@ br
     height:24px;
     
 }
+.contactclose {
+    float:right;
+    width:24px;
+    height:24px;
+    
+}
 
+
+.alert {
+    background:#ffffff;
+    z-index:10000;
+    position:absolute;
+}
+
+.text_content  {
+    
+    background:#ffffff;
+    padding:20px;
+}

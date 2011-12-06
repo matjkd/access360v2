@@ -56,7 +56,7 @@ $(document).ready(function() {
         e.preventDefault();
        
         //load content
-       $('.site_content').load("/welcome/ajax_content/home");
+       $('.site_content').load("/welcome/ajax_content/" + this.id);
         
         
         //Get the A tag
@@ -85,7 +85,7 @@ $(document).ready(function() {
         $(id).css('left', winW/2-$(id).width()/2);
      
         //transition effect
-        $(id).fadeIn(2000); 
+        $(id).fadeIn(100); 
         
        
      
@@ -108,4 +108,81 @@ $(document).ready(function() {
     });         
      
 });
+
+$(document).ready(function() {  
+ 
+    //select all the a tag with name equal to modal
+    $('a[name=contactmodal]').click(function(e) {
+        //Cancel the link behavior
+        e.preventDefault();
+       
+       
+        
+        
+        //Get the A tag
+        var id = $(this).attr('href');
+     
+        //Get the screen height and width
+        var maskHeight = $(document).height();
+        var maskWidth = $(window).width();
+     
+        //Set height and width to mask to fill up the whole screen
+        $('#contactmask').css({
+            'width':maskWidth,
+            'height':maskHeight
+        });
+         
+        //transition effect     
+        $('#contactmask').fadeIn(300);    
+        $('#contactmask').fadeTo(300,0.5);  
+     
+        //Get the window height and width
+        var winH = $(window).height();
+        var winW = $(window).width();
+               
+        //Set the popup window to center
+        $(id).css('top',  winH/2-$(id).height()/2);
+        $(id).css('left', winW/2-$(id).width()/2);
+     
+        //transition effect
+        $(id).fadeIn(100); 
+        
+       
+     
+     
+     
+     
+    });
+     
+    //if close button is clicked
+    $('.contactwindow .contactclose').click(function (e) {
+        //Cancel the link behavior
+        e.preventDefault();
+        $('#contactmask, .contactwindow').hide();
+    });     
+     
+    //if mask is clicked
+    $('#contactmask').click(function () {
+        $(this).hide();
+        $('.contactwindow').hide();
+    });         
+     
+});
+
+ $.backstretch("images/backgrounds/xmas.jpg");
+ 
+ 
+ 
+ $(function() {
+	$("#apple img[rel]").overlay({effect: 'apple'});
+});
+ 
+//wymeditor
+$(function() {
+   $('.wymeditor').wymeditor();
+});
+$(function() {
+		$( "#datepicker" ).datepicker();
+	});
+
 

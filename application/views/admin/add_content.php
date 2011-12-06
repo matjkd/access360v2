@@ -1,14 +1,32 @@
-<?=form_open("admin/submit_content")?> 
-Title:<?=form_input('title', set_value('title'))?>
-Menu link:<?=form_input('menu', set_value('menu'))?>
+<style>
+
+    label {
+        width:100px;
+        color:#ffffff;
+        float:left;
+    }
+</style>
+<?= form_open("admin/submit_content") ?> 
+<label>Title:</label>
+<?= form_input('title', set_value('title')) ?><br/>
+<label>Menu link:</label>
+<?= form_input('menu', set_value('menu')) ?>
 <br/>
-Added By: <?=form_input('added_by')?><br/>
-Date: <input type="text" name="date_added" id="datepicker" value=""><br/>
-<?php if(!isset($category)) { $category=""; } ?>
-Category: <input type="text" name="category" id="datepicker" value="<?=set_value('category', $category)?>"  disable="disabled" onFocus="this.blur();"><br/>
-Content:
+<label>Added By:</label> 
+<?= form_input('added_by') ?><br/>
+<label>Date:</label> 
+<input type="text" name="date_added" id="datepicker" value=""><br/>
+<?php
+if (!isset($category)) {
+    $category = "";
+}
+?>
+<label>Category:</label>
+<input type="text" name="categoryvisible" id="datepicker" value="<?= set_value('categoryvisible', $categoryvisible) ?>"  disable="disabled" onFocus="this.blur();"><br/>
+<input type="hidden" name="category" id="datepicker" value="<?= set_value('category', $category) ?>"  >
+<label>Content:</label>
 <textarea cols=75 rows=20 name="content" id="content"  class='wymeditor'></textarea>
 
 
 <input type="submit" class="wymupdate" />
-<?=form_close()?> 
+<?= form_close() ?> 

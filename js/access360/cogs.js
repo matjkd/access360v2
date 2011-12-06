@@ -38,14 +38,14 @@ coglogo3.rotate({
     { 
         mouseover : function() { 
             cog3.rotate({
-                animateTo:-180,
+                animateTo:-140,
                 easing: $.easing.easeOutQuad,
-                duration:10000
+                duration:20000
             });
             (cog4).rotate({
-                animateTo:140,
+                animateTo:100,
                 easing: $.easing.easeInOutQuad,
-                duration:10000
+                duration:20000
             });
             return false;  
         },
@@ -72,12 +72,12 @@ coglogo5.rotate({
             cog5.rotate({
                 animateTo:180,
                 easing: $.easing.easeOutQuad,
-                duration:10000
+                duration:20000
             });
             cog6.rotate({
                 animateTo:-140,
                 easing: $.easing.easeInOutQuad,
-                duration:10000
+                duration:20000
             });
             return false;  
         },
@@ -104,12 +104,12 @@ coglogo7.rotate({
             cog7.rotate({
                 animateTo:180,
                 easing: $.easing.easeOutQuad,
-                duration:10000
+                duration:20000
             });
             cog8.rotate({
                 animateTo:-140,
                 easing: $.easing.easeInOutQuad,
-                duration:10000
+                duration:20000
             });
             return false;  
         },
@@ -136,12 +136,12 @@ coglogo9.rotate({
             cog9.rotate({
                 animateTo:180,
                 easing: $.easing.easeOutQuad,
-                duration:10000
+                duration:20000
             });
             cog10.rotate({
                 animateTo:-140,
                 easing: $.easing.easeInOutQuad,
-                duration:10000
+                duration:20000
             });
             return false;  
         },
@@ -168,12 +168,12 @@ coglogo11.rotate({
             cog11.rotate({
                 animateTo:-180,
                 easing: $.easing.easeOutQuad,
-                duration:10000
+                duration:20000
             });
             cog12.rotate({
                 animateTo:140,
                 easing: $.easing.easeInOutQuad,
-                duration:10000
+                duration:20000
             });
             return false;  
         },

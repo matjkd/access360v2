@@ -6,7 +6,7 @@
     <li><?= anchor('/', 'signage') ?></li>
     <li><?= anchor('/', 'point of sale') ?></li>
     <li><?= anchor('/', 'digital signage') ?></li>
-    <li><?= anchor('/', 'news') ?></li>
+    <li><?= anchor('/news', 'news') ?></li>
     <li><?= anchor('/', 'contact') ?></li>
     <?php
     $is_logged_in = $this->session->userdata('is_logged_in');
