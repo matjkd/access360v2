@@ -51,7 +51,7 @@ class Gallery_model extends CI_Model {
             'source_image' => $image_data['full_path'],
            'new_image' => $this->gallery_path . '/thumbs',
             'maintain_ratio' => true,
-            'width' =>300,
+            'width' =>200,
             'height' => 200
         );
 

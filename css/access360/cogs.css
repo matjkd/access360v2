@@ -33,7 +33,11 @@
     height:300px;
 }
 #cog1logodiv{
-    z-index: 2000;
+   z-index:2000;
+    background-image: url('/images/logos/access360Over.png')  ;
+    background-repeat:no-repeat;
+
+    background-position:center; 
 }
 #cog1{
     width:300px;

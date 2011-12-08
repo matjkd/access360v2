@@ -13,22 +13,8 @@
     </head>
 
     <body>
-        <?= $this->load->view('global/access360/modals') ?>
-        <div id="header_container">
-            <div id="header">
-
-                <div  class="container_24" >
-
-
-                </div>
-                <div style="clear:both"></div>
-
-               
-
-
-
-            </div>
-        </div>   
+     
+      
         <div id="container">
 
             <div class="container_24" id="bodycontainer">
@@ -62,7 +48,9 @@
                         <?= $this->load->view('global/access360/menu') ?>
                     </div> 
                 </div>
-
+   <?= $this->load->view('global/access360/modals') ?>
+        
+      
 
         <!--! end of #container -->
         <?= $this->load->view('template/access360/footer') ?>

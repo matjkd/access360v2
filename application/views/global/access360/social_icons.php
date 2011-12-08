@@ -3,5 +3,5 @@
 
 
 <a href="http://twitter.com/access_360"/><img src="<?=base_url()?>images/icons/twitter_32.png" /></a>
-<a href="http://uk.linkedin.com/"/><img src="<?=base_url()?>images/icons/linkedin_32.png" /></a>
+
 </div>

@@ -190,11 +190,11 @@ class Welcome extends MY_Controller {
     }
 
     function news() {
-                if ($this->session->flashdata('message')) {
+        if ($this->session->flashdata('message')) {
             $data['message'] = $this->session->flashdata('message');
         }
         $id = 'news';
-        
+        $data['captcha'] = $this->captcha_model->initiate_captcha();
         $data['content'] = $this->content_model->get_all_news();
         $data['main_content'] = "global/" . $this->config_theme . "/content";
         $data['title'] = "News";

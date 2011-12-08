@@ -1,4 +1,5 @@
 //cogs
+
 var coglogo1 = $("#coglogo1");
 var coglogo3 = $("#coglogo3");
 var coglogo5 = $("#coglogo5");
@@ -20,6 +21,12 @@ var cog12 = $("#cog12");
 
 var multicogs = $("#cog4, #cog6");
 
+
+if($.browser.mozilla) {
+    
+} else {
+
+    
 var angle1 = 0;
 setInterval(function(){
     angle1+=0.2;
@@ -33,18 +40,21 @@ setInterval(function(){
     $(cog2).rotate(angle2);
 },20);
 
+var end = new Date().getTime();
+
+
 coglogo3.rotate({ 
     bind: 
     { 
         mouseover : function() { 
             cog3.rotate({
-                animateTo:-140,
+                animateTo:-80,
                 easing: $.easing.easeOutQuad,
                 duration:20000
             });
             (cog4).rotate({
-                animateTo:100,
-                easing: $.easing.easeInOutQuad,
+                animateTo:40,
+                easing: $.easing.easeOutQuad,
                 duration:20000
             });
             return false;  
@@ -52,11 +62,11 @@ coglogo3.rotate({
         mouseout : function() { 
             cog3.rotate({
                 animateTo:0,
-                easing: $.easing.easeInOutQuad
+                easing: $.easing.easeOutQuad
             });
             (cog4).rotate({
                 animateTo:0,
-                easing: $.easing.easeInOutQuad
+                easing: $.easing.easeOutQuad
             });
             return false;  
         }
@@ -70,13 +80,13 @@ coglogo5.rotate({
     { 
         mouseover : function() { 
             cog5.rotate({
-                animateTo:180,
+                animateTo:80,
                 easing: $.easing.easeOutQuad,
                 duration:20000
             });
             cog6.rotate({
-                animateTo:-140,
-                easing: $.easing.easeInOutQuad,
+                animateTo:-40,
+                easing: $.easing.easeOutQuad,
                 duration:20000
             });
             return false;  
@@ -84,11 +94,11 @@ coglogo5.rotate({
         mouseout : function() { 
             cog5.rotate({
                 animateTo:0,
-                easing: $.easing.easeInOutQuad
+                easing: $.easing.easeOutQuad
             });
             cog6.rotate({
                 animateTo:0,
-                easing: $.easing.easeInOutQuad
+                easing: $.easing.easeOutQuad
             });
             return false;  
         }
@@ -102,13 +112,13 @@ coglogo7.rotate({
     { 
         mouseover : function() { 
             cog7.rotate({
-                animateTo:180,
+                animateTo:80,
                 easing: $.easing.easeOutQuad,
                 duration:20000
             });
             cog8.rotate({
-                animateTo:-140,
-                easing: $.easing.easeInOutQuad,
+                animateTo:-40,
+                easing: $.easing.easeOutQuad,
                 duration:20000
             });
             return false;  
@@ -116,11 +126,11 @@ coglogo7.rotate({
         mouseout : function() { 
             cog7.rotate({
                 animateTo:0,
-                easing: $.easing.easeInOutQuad
+                easing: $.easing.easeOutQuad
             });
             cog8.rotate({
                 animateTo:0,
-                easing: $.easing.easeInOutQuad
+                easing: $.easing.easeOutQuad
             });
             return false;  
         }
@@ -134,13 +144,13 @@ coglogo9.rotate({
     { 
         mouseover : function() { 
             cog9.rotate({
-                animateTo:180,
+                animateTo:80,
                 easing: $.easing.easeOutQuad,
                 duration:20000
             });
             cog10.rotate({
-                animateTo:-140,
-                easing: $.easing.easeInOutQuad,
+                animateTo:-40,
+                easing: $.easing.easeOutQuad,
                 duration:20000
             });
             return false;  
@@ -148,11 +158,11 @@ coglogo9.rotate({
         mouseout : function() { 
             cog9.rotate({
                 animateTo:0,
-                easing: $.easing.easeInOutQuad
+                easing: $.easing.easeOutQuad
             });
             cog10.rotate({
                 animateTo:0,
-                easing: $.easing.easeInOutQuad
+                easing: $.easing.easeOutQuad
             });
             return false;  
         }
@@ -166,13 +176,13 @@ coglogo11.rotate({
     { 
         mouseover : function() { 
             cog11.rotate({
-                animateTo:-180,
+                animateTo:-80,
                 easing: $.easing.easeOutQuad,
                 duration:20000
             });
             cog12.rotate({
-                animateTo:140,
-                easing: $.easing.easeInOutQuad,
+                animateTo:40,
+                easing: $.easing.easeOutQuad,
                 duration:20000
             });
             return false;  
@@ -180,11 +190,11 @@ coglogo11.rotate({
         mouseout : function() { 
             cog11.rotate({
                 animateTo:0,
-                easing: $.easing.easeInOutQuad
+                easing: $.easing.easeOutQuad
             });
             cog12.rotate({
                 animateTo:0,
-                easing: $.easing.easeInOutQuad
+                easing: $.easing.easeOutQuad
             });
             return false;  
         }
@@ -193,3 +203,5 @@ coglogo11.rotate({
 });
 
 //end of cogs
+
+}

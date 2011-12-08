@@ -1,3 +1,18 @@
+<!doctype html>  
+<head>
+<style>
+    
+
+    .centertext {
+        display:block;
+        text-align:center;
+    }
+   
+</style>
+    </head>
+
+    <body>
+
 <!--Main content page for site loaded with ajax-->
 
 
@@ -34,3 +49,6 @@
         <?= $this->load->view('extra/' . $row->extra) ?>
     <?php } ?>
 <?php endforeach; ?>
+
+        </body>
+</html>

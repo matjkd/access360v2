@@ -1,40 +1,3 @@
-// remap jQuery to $
-(function($){
-
- 
-
-
-
-
-
- 
-
-
-
-    })(this.jQuery);
-
-
-
-// usage: log('inside coolFunc',this,arguments);
-// paulirish.com/2009/log-a-lightweight-wrapper-for-consolelog/
-window.log = function(){
-    log.history = log.history || [];   // store logs to an array for reference
-    log.history.push(arguments);
-    if(this.console){
-        console.log( Array.prototype.slice.call(arguments) );
-    }
-};
-
-
-
-// catch all document.write() calls
-(function(doc){
-    var write = doc.write;
-    doc.write = function(q){ 
-        log('document.write(): ',arguments); 
-        if (/docwriteregexwhitelist/.test(q)) write.apply(doc,arguments);  
-    };
-})(document);
 
 $( ".thumbnail" ).mouseout( function() {
     $( this ).animate({
@@ -48,141 +11,82 @@ $( ".thumbnail" ).mouseover( function() {
     }, 50);
 });
 
-$(document).ready(function() {  
- 
-    //select all the a tag with name equal to modal
-    $('a[name=modal]').click(function(e) {
-        //Cancel the link behavior
-        e.preventDefault();
-       
-        //load content
-       $('.site_content').load("/welcome/ajax_content/" + this.id);
-        
-        
-        //Get the A tag
-        var id = $(this).attr('href');
-     
-        //Get the screen height and width
-        var maskHeight = $(document).height();
-        var maskWidth = $(window).width();
-     
-        //Set height and width to mask to fill up the whole screen
-        $('#mask').css({
-            'width':maskWidth,
-            'height':maskHeight
-        });
-         
-        //transition effect     
-        $('#mask').fadeIn(300);    
-        $('#mask').fadeTo("slow",0.5);  
-     
-        //Get the window height and width
-        var winH = $(window).height();
-        var winW = $(window).width();
-               
-        //Set the popup window to center
-        $(id).css('top',  winH/2-$(id).height()/2);
-        $(id).css('left', winW/2-$(id).width()/2);
-     
-        //transition effect
-        $(id).fadeIn(100); 
-        
-       
-     
-     
-     
-     
-    });
-     
-    //if close button is clicked
-    $('.window .close').click(function (e) {
-        //Cancel the link behavior
-        e.preventDefault();
-        $('#mask, .window').hide();
-    });     
-     
-    //if mask is clicked
-    $('#mask').click(function () {
-        $(this).hide();
-        $('.window').hide();
-    });         
-     
-});
 
-$(document).ready(function() {  
- 
-    //select all the a tag with name equal to modal
-    $('a[name=contactmodal]').click(function(e) {
-        //Cancel the link behavior
-        e.preventDefault();
-       
-       
-        
-        
-        //Get the A tag
-        var id = $(this).attr('href');
-     
-        //Get the screen height and width
-        var maskHeight = $(document).height();
-        var maskWidth = $(window).width();
-     
-        //Set height and width to mask to fill up the whole screen
-        $('#contactmask').css({
-            'width':maskWidth,
-            'height':maskHeight
-        });
-         
-        //transition effect     
-        $('#contactmask').fadeIn(300);    
-        $('#contactmask').fadeTo(300,0.5);  
-     
-        //Get the window height and width
-        var winH = $(window).height();
-        var winW = $(window).width();
-               
-        //Set the popup window to center
-        $(id).css('top',  winH/2-$(id).height()/2);
-        $(id).css('left', winW/2-$(id).width()/2);
-     
-        //transition effect
-        $(id).fadeIn(100); 
-        
-       
-     
-     
-     
-     
-    });
-     
-    //if close button is clicked
-    $('.contactwindow .contactclose').click(function (e) {
-        //Cancel the link behavior
-        e.preventDefault();
-        $('#contactmask, .contactwindow').hide();
-    });     
-     
-    //if mask is clicked
-    $('#contactmask').click(function () {
-        $(this).hide();
-        $('.contactwindow').hide();
-    });         
-     
-});
 
- $.backstretch("images/backgrounds/xmas.jpg");
+
  
  
  
- $(function() {
-	$("#apple img[rel]").overlay({effect: 'apple'});
-});
+
  
-//wymeditor
+//some things
 $(function() {
-   $('.wymeditor').wymeditor();
+    
+    $('.wymeditor').wymeditor({
+         stylesheet: '/css/wym.css'
+    });
+   
+    $( "#datepicker" ).datepicker();
+             
 });
+
+
+$(document).ready(function() {
+    
+    $("#newsimage img[rel]").overlay({
+          
+        
+        });
+    
+
+    
+});
+
 $(function() {
-		$( "#datepicker" ).datepicker();
-	});
 
+    // if the function argument is given to overlay,
+    // it is assumed to be the onBeforeLoad event listener
+    $("a[rel]").overlay({
 
+        mask: 'dark',
+        effect: 'apple',
+
+        onBeforeLoad: function() {
+
+            // grab wrapper element inside content
+            var wrap = this.getOverlay().find(".contentWrap");
+
+            // load the page specified in the trigger
+            wrap.load(this.getTrigger().attr("href"));
+        }
+
+    });
+          
+});
+
+//Top menu on other pages
+
+$(document).ready(function() {
+
+    $("#topnav li").prepend("<span></span>"); //Throws an empty span tag right before the a tag
+
+    $("#topnav li").each(function() { //For each list item...
+        var linkText = $(this).find("a").html(); //Find the text inside of the <a> tag
+        $(this).find("span").show().html(linkText); //Add the text in the <span> tag
+    }); 
+
+    $("#topnav li").hover(function() {	//On hover...
+        $(this).find("span").stop().animate({
+            marginTop: "-31" //Find the <span> tag and move it up 31 pixels
+        }, 250);
+    } , function() { //On hover out...
+        $(this).find("span").stop().animate({
+            marginTop: "0"  //Move the <span> back to its original state (0px)
+        }, 250);
+    });
+
+});
+
+$(window).load(function() {
+    $.backstretch("images/backgrounds/xmas.jpg");
+});

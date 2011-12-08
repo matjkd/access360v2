@@ -35,7 +35,7 @@
         </div>
 
         <div style="clear:both"></div>
-        <input type="submit" class="wymupdate" value="update"/>
+        <input type="submit" class="wymupdate" value="update" name="upload"/>
         <?= form_close() ?> 
     <?php endforeach ?>
 </div>

@@ -9,7 +9,7 @@
 <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.js"></script>
 <script src="http://cdn.jquerytools.org/1.2.6/all/jquery.tools.min.js"></script>
 
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script> 
+<!--<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script> -->
 
 <!-- scripts concatenated and minified via ant build script-->
 <script src="<?= base_url() ?>js/wymeditor/jquery.wymeditor.min.js"></script>
@@ -18,8 +18,9 @@
 <script src="<?= base_url() ?>js/access360/plugins.js"></script>
 
 <script src="<?= base_url() ?>js/script.js"></script>
-<script src="<?= base_url() ?>js/access360/cogs.js"></script>
 <script src="<?= base_url() ?>js/access360/script.js"></script>
+<script src="<?= base_url() ?>js/access360/cogs.js"></script>
+
 
 <!-- end concatenated and minified scripts-->
 

@@ -12,16 +12,16 @@ body {
 
     line-height:22px;
     /*	font:normal 16px/24px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", sans-serif;
-	font-weight: 300;*/
-	font:normal 14px/20px "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-    
+        font-weight: 300;*/
+    font:normal 14px/20px "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+
 }
 
 @font-face { font-family: 'spinnaker2';
              src: url('/fonts/Spinnaker-Regular.ttf');
 }
 p {
-    margin-bottom:8px;
+    margin-bottom:12px;
     text-align: left;
 }
 #container {
@@ -30,27 +30,30 @@ p {
     margin:20px auto;
     min-height:560px;
     display:block;
-    position:relative;
-   
 
     z-index:5;
 }
 h1 {
-   
+
     font-size: 20px;
     font-style: normal; 
     font-weight: 700;
     text-shadow: none;
     text-decoration: none;
-color: #a72c31;
+    color: #a72c31;
     letter-spacing: 0em;
     word-spacing: 0em;
     line-height: 1.2;
+
     margin-bottom:10px;
-    
+
+}
+
+h2 {
+    margin:10px 0 0 0;
 }
 #header_container{
-  
+
     height:42px;
     display:block;
 }
@@ -58,13 +61,13 @@ color: #a72c31;
 
     height:42px;
     width:100%;
-   
+
     display:block;
     position:relative;
     z-index:15;
 
-  
-    
+
+
 }
 
 #footer {
@@ -89,34 +92,39 @@ color: #a72c31;
     color: #AAA;
 
 }
-#logo {
-
-    background:url('/images/template/sunncamp/logo.png') no-repeat;
-    padding-top:0px;
-    text-align: left;
-    padding-bottom:0px;
-    height:97px;
-    color:#ffffff;
-    position:relative;
-    display:block;
-    margin-top:10px;
-    margin-left:auto;
-    margin-right:auto;
-
+.page_header {
+    background:url(/images/backgrounds/header.png) no-repeat;
+    width:960px;
+    height:175px;
+    padding:0px;
+}
+.page_footer {
+    background:url(/images/backgrounds/footer.jpg) no-repeat;
+    width:960px;
+    height:36px;
+    padding:0px;
+}
 
 
+
+
+ul {
+    padding-left:20px;
+}
+li {
+    padding-left:0px;
 }
 #menutop {
 
     width:100%;
     height:31px;
     text-align: right;
-   
+
     padding-top: 0px;
     border-top: solid 0px #4a5b63;
     line-height:31px;;
 
-   
+
     z-index:25;
     display:block;
     position:relative;
@@ -128,8 +136,8 @@ color: #a72c31;
 }
 #menutop li {
     display:inline;
-    padding-right:15px;
-    padding-left:15px;
+    padding-right:4px;
+    padding-left:4px;
     border-right: 1px solid #ffffff;
 }
 
@@ -138,7 +146,7 @@ color: #a72c31;
     color: #ffffff;
 }
 .socialicons {
-    padding-top:20px;
+    padding-top:10px;
     float:left; position:relative; padding-right:10px;
 }
 .linkicons {
@@ -244,73 +252,73 @@ br
 
 /* Z-index of #mask must lower than #boxes .window */
 #mask {
-  position:absolute;
-  top:0;
-  left:0;
-  z-index:9000;
-  background-color:#000;
-  display:none;
-  opacity:0.5;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:9000;
+    background-color:#000;
+    display:none;
+    opacity:0.5;
 }
-   
+
 #boxes .window {
-  position:absolute;
-  width:440px;
-  height:390px;
-  display:none;
-  z-index:9999;
+    position:absolute;
+    width:440px;
+    height:390px;
+    display:none;
+    z-index:9999;
     padding:20px 30px 30px 30px;
 }
 
 #contactmask {
-  position:absolute;
-  top:0;
-  left:0;
-  z-index:9000;
-  background-color:#000;
-  display:none;
-  opacity:0.5;
-}
-   
-#contactboxes .contactwindow {
-  position:absolute;
-  width:440px;
-  height:390px;
-  display:none;
-  z-index:9999;
-    padding:20px 30px 30px 30px;
-}
- 
- 
-/* Customize your modal window here, you can add background image too */
-#boxes #dialog {
-  width:440px; 
-  height:390px;
-  background:url('/images/backgrounds/modalback.png') no-repeat;
-  overflow: none;
-  padding:20px 30px 30px 30px;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:9000;
+    background-color:#000;
+    display:none;
+    opacity:0.5;
 }
 
- 
+#contactboxes .contactwindow {
+    position:absolute;
+    width:440px;
+    height:390px;
+    display:none;
+    z-index:9999;
+    padding:20px 30px 30px 30px;
+}
+
+
+/* Customize your modal window here, you can add background image too */
+#boxes #dialog {
+    width:440px; 
+    height:390px;
+    background:url('/images/backgrounds/modalback.png') no-repeat;
+    overflow: none;
+    padding:20px 30px 30px 30px;
+}
+
+
 /* Customize your modal window here, you can add background image too */
 #contactboxes #contactdialog {
-  width:440px; 
-  height:390px;
-  background:url('/images/backgrounds/modalback.png') no-repeat;
-  overflow: none;
-  padding:20px 30px 30px 30px;
+    width:440px; 
+    height:390px;
+    background:url('/images/backgrounds/modalback.png') no-repeat;
+    overflow: none;
+    padding:20px 30px 30px 30px;
 }
 .close {
     float:right;
     width:24px;
     height:24px;
-    
+
 }
 .contactclose {
     float:right;
     width:24px;
     height:24px;
-    
+
 }
 
 
@@ -321,7 +329,184 @@ br
 }
 
 .text_content  {
-    
+
     background:#ffffff;
     padding:20px;
 }
+
+
+
+/* the overlayed element */
+.overlaynews, #overlaynews {
+    
+    color:#ffffff;
+    padding:40px;   
+   
+    display:none;
+    background:#292929;
+
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+
+    -moz-box-shadow: 4px 6px 21px #000000;
+    -webkit-box-shadow: 4px 6px 21px #000000;
+    box-shadow: 4px 6px 21px #000000;
+
+    background-color: rgba(80, 82, 82, 0.9);
+    background: rgba(80, 82, 82, 0.9);
+  
+}
+.overlaynews .close {
+    background-image:url(/images/icons/close.png);
+    position:absolute; right:5px; top:5px;
+    cursor:pointer;
+    height:35px;
+    width:35px;
+}
+
+
+.apple_overlay {
+
+    /* initially overlay is hidden */
+    display:none;
+
+    /* growing background image */
+    background-image:url(/images/backgrounds/white.png);
+
+    /* 
+        width after the growing animation finishes
+        height is automatically calculated
+    */
+    width:640px;        
+
+    /* some padding to layout nested elements nicely  */
+    padding:35px;
+
+    /* a little styling */ 
+
+}
+
+/* default close button positioned on upper right corner */
+.apple_overlay .close {
+    background-image:url(/images/icons/close.png);
+    position:absolute; right:5px; top:5px;
+    cursor:pointer;
+    height:35px;
+    width:35px;
+}
+/* use a semi-transparent image for the overlay */
+#overlay {
+    background-image:url(http://static.flowplayer.org/img/overlay/transparent.png);
+    color:#efefef;
+    height:450px;
+
+}
+#contactoverlay {
+    background-image:url(http://static.flowplayer.org/img/overlay/transparent.png);
+    color:#efefef;
+    height:450px;
+
+}
+/* container for external content. uses vertical scrollbar, if needed */
+div.contentWrap {
+    height:441px;
+    overflow-y:auto;
+}
+
+
+/* Menu
+----------------------------------------------------------------------------------------------------*/
+
+.menu_177,
+.menu_87 {
+    font:normal 12px/14px "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    color:#ffffff;
+    display:inline;
+    float: left;
+    position: relative;
+    text-align:center;
+    padding-top: 7px;
+    padding-bottom: 9px;
+    margin:0px;
+}
+.menu_177:hover,
+.menu_87:hover {
+
+}
+#top-menu {
+    height: 31px;
+    width:960px;
+    background: url("/images/menu_back.jpg") no-repeat left center;
+    margin:0px auto;
+    padding:0;
+
+}
+
+.menu_87 {
+    width:87px;
+}
+.menu_177 {
+    width:177px;
+}
+
+ul#topnav {
+    margin: 0;
+    padding: 125px 0px 0px 0px;
+    list-style: none;
+    float: left;
+    font-size: 1.1em;
+}
+ul#topnav li{
+    margin: 0 0px 0 0;
+    padding: 0;
+    overflow: hidden;  /*--Important - Masking out the hover state by default--*/
+    float: left;
+    height:31px;
+}
+ul#topnav a, ul#topnav span { /*--The <a> and <span> share the same properties since the <span>  will be a duplicate of the <a> tag--*/
+    padding: 5px 0px;
+    float: left;
+    text-decoration: none;
+    color: #fff;
+    text-transform: lowercase;
+    clear: both;
+    width: 100%;
+    height: 21px;
+    line-height: 21px; /*--Vertical alignment of text--*/
+}
+ul#topnav a{ /*--This is basically the hover state of navigation--*/
+    color: #fff;
+    background:url("/images/menu_hover.png");
+
+    background-position: left bottom;
+}
+ul#topnav span{ /*--Default state of navigation--*/
+    background-position: left top;
+}
+/* End of Menu
+----------------------------------------------------------------------------------------------------*/
+
+.tooltip {
+    display:none;
+    background:transparent url(/tools/img/tooltip/black_arrow.png);
+    font-size:12px;
+    height:70px;
+    width:160px;
+    padding:25px;
+    color:#fff;	
+}
+
+
+#custom {
+    background-image:url(/images/messages/xmas.png);
+    display:block;
+    position:absolute;
+    width:348px;
+    height:115px;
+    padding:0px;
+    right:0px;
+    top:0px;
+}
+
+

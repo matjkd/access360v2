@@ -73,13 +73,15 @@ class Admin extends MY_Controller {
             $this->content_model->edit_content($id);
 
             //check if image added, and upload
-          //  if ($this->input->post('upload')) {
+           if ($this->input->post('upload')) {
                 $this->gallery_model->do_upload($id);
-         //   }
+                redirect("admin/edit/$id");
+            }
+            echo "upload failed";
         }
 
 
-       // redirect("admin/edit/$id");
+       
     }
 
     function edit_product_content() {
