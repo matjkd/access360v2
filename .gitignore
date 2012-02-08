@@ -6,3 +6,4 @@ stats/*
 .htaccess
 awstatsicons
 awstats-icon
+*.*~

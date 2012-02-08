@@ -88,5 +88,5 @@ $(document).ready(function() {
 });
 
 $(window).load(function() {
-    $.backstretch("images/backgrounds/xmas.jpg");
+    $.backstretch("images/backgrounds/cogbackground.jpg");
 });

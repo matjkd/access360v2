@@ -1,6 +1,6 @@
 html {
 
-    background: url(/images/backgrounds/xmas.jpg) no-repeat top center fixed;
+    background: url(/images/backgrounds/cogbackground.jpg) no-repeat top center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -499,7 +499,7 @@ ul#topnav span{ /*--Default state of navigation--*/
 
 
 #custom {
-    background-image:url(/images/messages/xmas.png);
+/*    background-image:url(/images/messages/xmas.png);*/
     display:block;
     position:absolute;
     width:348px;
