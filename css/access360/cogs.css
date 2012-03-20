@@ -34,7 +34,7 @@
 }
 #cog1logodiv{
    z-index:2000;
-    background-image: url('/images/logos/access360Over.png')  ;
+    background-image: url('logos/access360Over.png')  ;
     background-repeat:no-repeat;
 
     background-position:center; 
@@ -69,7 +69,7 @@
 }
 #cog3logodiv{
     z-index:2000;
-    background-image: url('/images/cogs/360experientialOver.png')  ;
+    background-image: url('cogs/360experientialOver.png')  ;
     background-repeat:no-repeat;
 
     background-position:center; 
@@ -119,7 +119,7 @@
 }
 #cog5logodiv{
     z-index:2000;
-    background-image: url('/images/cogs/360exhibitionsOver.png')  ;
+    background-image: url('cogs/360exhibitionsOver.png')  ;
     background-repeat:no-repeat;
 
     background-position:center; 
@@ -167,7 +167,7 @@
 }
 #cog7logodiv{
     z-index:2000;
-    background-image: url('/images/cogs/360posOver.png')  ;
+    background-image: url('cogs/360posOver.png')  ;
     background-repeat:no-repeat;
 
     background-position:center; 
@@ -215,7 +215,7 @@
 }
 #cog9logodiv{
     z-index:2000;
-    background-image: url('/images/cogs/360signageOver.png')  ;
+    background-image: url('cogs/360signageOver.png')  ;
     background-repeat:no-repeat;
 
     background-position:center; 
@@ -263,7 +263,7 @@
 }
 #cog11logodiv{
     z-index:2000;
-    background-image: url('/images/cogs/360digitalsignageOver.png')  ;
+    background-image: url('cogs/360digitalsignageOver.png')  ;
     background-repeat:no-repeat;
 
     background-position:center; 
@@ -310,7 +310,7 @@
 }
 #newscoglogodiv{
     z-index:3000;
-    background-image: url('/images/cogs/newsOver.png')  ;
+    background-image: url('cogs/newsOver.png')  ;
     background-repeat:no-repeat;
 
     background-position:center; 
@@ -344,7 +344,7 @@
 }
 #contactcoglogodiv{
     z-index:3000;
-    background-image: url('/images/cogs/contactOver.png')  ;
+    background-image: url('cogs/contactOver.png')  ;
     background-repeat:no-repeat;
 
     background-position:center; 

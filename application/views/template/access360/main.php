@@ -13,7 +13,7 @@
     </head>
 
     <body>
-     
+         <input type="hidden" id="baseurl" value="<?=base_url()?>"/>
       
         <div id="container">
 

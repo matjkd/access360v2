@@ -1,6 +1,6 @@
 html {
 
-    background: url(/images/backgrounds/cogbackground.jpg) no-repeat top center fixed;
+    background: url(images/backgrounds/cogbackground.jpg) no-repeat top center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -93,13 +93,13 @@ h2 {
 
 }
 .page_header {
-    background:url(/images/backgrounds/header.png) no-repeat;
+    background:url(images/backgrounds/header.png) no-repeat;
     width:960px;
     height:175px;
     padding:0px;
 }
 .page_footer {
-    background:url(/images/backgrounds/footer.jpg) no-repeat;
+    background:url(images/backgrounds/footer.jpg) no-repeat;
     width:960px;
     height:36px;
     padding:0px;
@@ -294,7 +294,7 @@ br
 #boxes #dialog {
     width:440px; 
     height:390px;
-    background:url('/images/backgrounds/modalback.png') no-repeat;
+    background:url('images/backgrounds/modalback.png') no-repeat;
     overflow: none;
     padding:20px 30px 30px 30px;
 }
@@ -304,7 +304,7 @@ br
 #contactboxes #contactdialog {
     width:440px; 
     height:390px;
-    background:url('/images/backgrounds/modalback.png') no-repeat;
+    background:url('images/backgrounds/modalback.png') no-repeat;
     overflow: none;
     padding:20px 30px 30px 30px;
 }
@@ -358,7 +358,7 @@ br
   
 }
 .overlaynews .close {
-    background-image:url(/images/icons/close.png);
+    background-image:url(images/icons/close.png);
     position:absolute; right:5px; top:5px;
     cursor:pointer;
     height:35px;
@@ -372,7 +372,7 @@ br
     display:none;
 
     /* growing background image */
-    background-image:url(/images/backgrounds/white.png);
+    background-image:url(images/backgrounds/white.png);
 
     /* 
         width after the growing animation finishes
@@ -389,7 +389,7 @@ br
 
 /* default close button positioned on upper right corner */
 .apple_overlay .close {
-    background-image:url(/images/icons/close.png);
+    background-image:url(images/icons/close.png);
     position:absolute; right:5px; top:5px;
     cursor:pointer;
     height:35px;
@@ -397,13 +397,13 @@ br
 }
 /* use a semi-transparent image for the overlay */
 #overlay {
-    background-image:url(http://static.flowplayer.org/img/overlay/transparent.png);
+  background-image:url(images/backgrounds/transparent.png);
     color:#efefef;
     height:450px;
 
 }
 #contactoverlay {
-    background-image:url(http://static.flowplayer.org/img/overlay/transparent.png);
+   background-image:url(images/backgrounds/transparent.png);
     color:#efefef;
     height:450px;
 
@@ -437,7 +437,7 @@ div.contentWrap {
 #top-menu {
     height: 31px;
     width:960px;
-    background: url("/images/menu_back.jpg") no-repeat left center;
+    background: url("images/menu_back.jpg") no-repeat left center;
     margin:0px auto;
     padding:0;
 
@@ -477,7 +477,7 @@ ul#topnav a, ul#topnav span { /*--The <a> and <span> share the same properties s
 }
 ul#topnav a{ /*--This is basically the hover state of navigation--*/
     color: #fff;
-    background:url("/images/menu_hover.png");
+    background:url("images/menu_hover.png");
 
     background-position: left bottom;
 }

@@ -1,3 +1,4 @@
+var base_url = $('#baseurl').val();
 
 $( ".thumbnail" ).mouseout( function() {
     $( this ).animate({
@@ -23,7 +24,7 @@ $( ".thumbnail" ).mouseover( function() {
 $(function() {
     
     $('.wymeditor').wymeditor({
-         stylesheet: '/css/wym.css'
+         stylesheet: base_url + '/css/wym.css'
     });
    
     $( "#datepicker" ).datepicker();
@@ -88,5 +89,5 @@ $(document).ready(function() {
 });
 
 $(window).load(function() {
-    $.backstretch("images/backgrounds/cogbackground.jpg");
+    $.backstretch(base_url +"images/backgrounds/cogbackground.jpg");
 });
