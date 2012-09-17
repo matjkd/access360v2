@@ -9,75 +9,153 @@ class Gallery_model extends CI_Model {
         parent::__construct();
     }
 
-    function Gallery_model() {
-
-        parent::Model();
-
-        $this->gallery_path = './images/uploads';
-        $this->gallery_path_url = base_url() . 'images/uploads/';
-    }
-
-    function do_upload($id) {
-
-    
+    function do_upload() {
+        $this->gallery_path = './images/temp/';
+        $this->gallery_path_url = base_url() . 'images/temp/';
         
-         $this->gallery_path = './images/uploads';
-        $this->gallery_path_url = base_url() . 'images/uploads/';
         
         $config = array(
             'allowed_types' => 'jpg|jpeg|gif|png',
-              'upload_path' =>  $this->gallery_path,
-            'max_size' => 2000
+            'upload_path' => $this->gallery_path,
+            'max_size' => 10000
         );
 
         $this->load->library('upload', $config);
-        if( ! $this->upload->do_upload()){
-          
+        if (!$this->upload->do_upload('file')) {
             $error = array('error' => $this->upload->display_errors());
-              
-              print_r($config);
             print_r($error);
+        } else {
+            $image_data = $this->upload->data();
         }
-        else
-        {
-            echo 3;
-              $image_data = $this->upload->data();
-        }
-    
+
 
 
         //resize the images
         $config = array(
             'source_image' => $image_data['full_path'],
-           'new_image' => $this->gallery_path . '/thumbs',
+            'new_image' => $this->gallery_path . 'thumbs',
             'maintain_ratio' => true,
-            'width' =>200,
+            'width' => 350,
             'height' => 200
         );
 
         $this->load->library('image_lib', $config);
         $this->image_lib->resize();
         $this->image_lib->clear();
+        
+        
+        $config2 = array(
+        		'source_image' => $image_data['full_path'],
+        		'new_image' => $this->gallery_path . 'medium',
+        		'maintain_ratio' => true,
+        		'width' => 675,
+        		'height' => 500
+        );
+        
+         $this->image_lib->initialize($config2);
+        $this->image_lib->resize();
+        $this->image_lib->clear();
+    }
+    
+    function upload_attachment() {
+        
+         $this->gallery_path = './images/temp/';
+        $this->gallery_path_url = base_url() . 'images/temp/';
+        
+        
+        $config = array(
+            'allowed_types' => 'doc|pdf|docx|zip',
+            'upload_path' => $this->gallery_path,
+            'max_size' => 50000
+        );
 
-
-       
-        $upload_data = array($this->upload->data());
-
-        foreach ($upload_data as $row):
-
-            // add this to database $row['file_name'];
-            $new_image_data = array(
-                'news_image' => $row['file_name'],
-              
-              
-            );
-
-        if($row['file_name']!=NULL){
-            $this->db->where('content_id', $id);
-            $this->db->update('content', $new_image_data);
+        $this->load->library('upload', $config);
+        if (!$this->upload->do_upload('file')) {
+            $error = array('error' => $this->upload->display_errors());
+            print_r($error);
+        } else {
+            $image_data = $this->upload->data();
         }
 
-        endforeach;
+        
+        
+        
+    }
+    
+    function do_case_upload($field = 0, $height = 110) {
+    
+    	$this->gallery_path = './images/temp/';
+    	$this->gallery_path_url = base_url() . 'images/temp/';
+    
+    	if($field === 0) {
+    		$field = "image_1";
+    	}
+    	else {
+    		$field = $field;
+    	}
+    
+    	$config = array(
+    			'allowed_types' => 'jpg|jpeg|gif|png',
+    			'upload_path' => $this->gallery_path,
+    			'max_size' => 10000
+    	);
+    
+    	$this->load->library('upload', $config);
+    	if (!$this->upload->do_upload($field)) {
+    		$error = array('error' => $this->upload->display_errors());
+    		print_r($error);
+    	} else {
+    
+    		$image_data = $this->upload->data();
+    	}
+    
+    
+    
+    	//resize the images
+    	$config = array(
+    			'source_image' => $image_data['full_path'],
+    			'new_image' => $this->gallery_path . 'thumbs/'.$image_data['orig_name'],
+    			'maintain_ratio' => true,
+    
+    			'height' => $height
+    	);
+    	$this->load->library('image_lib', $config);
+    	$this->image_lib->initialize($config);
+    	$this->image_lib->clear();
+    	$this->image_lib->initialize($config);
+    		
+    	if ( ! $this->image_lib->resize())
+    	{
+    		echo $this->image_lib->display_errors();
+    	}
+    	$this->image_lib->clear();
+    
+    
+    
+    }
+    
+    function do_upload_pdf() {
+    	$this->gallery_path = './images/temp/';
+    	$this->gallery_path_url = base_url() . 'images/temp/';
+    
+    
+    	$config = array(
+    			'allowed_types' => 'pdf',
+    			'upload_path' => $this->gallery_path,
+    			'max_size' => 100000
+    	);
+    
+    	$this->load->library('upload', $config);
+    	if (!$this->upload->do_upload('pdf')) {
+    		$error = array('error' => $this->upload->display_errors());
+    		print_r($error);
+    	} else {
+    		$image_data = $this->upload->data();
+    	}
+    
+    
+    
+    		
     }
 
 }

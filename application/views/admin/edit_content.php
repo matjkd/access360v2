@@ -1,41 +1,73 @@
-<div style="background:#cccccc; padding:10px;">
-
-    <?php foreach ($content as $row): ?>
+<?php foreach($content as $row):?>
 
 
-        <?php $id = $row->content_id; ?>
+<?php  $id = $row->content_id;?>
 
 
-        <?= form_open_multipart("admin/edit_content/$row->content_id") ?> 
-        <div>    
-            Title: <br/><?= form_input('title', $row->title) ?><br/>
-            Menu link: <br/><?= form_input('menu', $row->menu) ?>
-        </div>
-        <div>
-            <textarea cols=65 rows=20 name="content" id="content" class='wymeditor'><?= $row->content ?></textarea>
-        </div>
-        <div style="clear:both"></div>
-        <div style="float:left; width:400px;">
-            Meta Description<br/>
-            <textarea  cols=65 rows=2 name="meta_desc"><?= $row->meta_desc ?></textarea>
-            <br/>
+<?=form_open_multipart("admin/edit_content/$row->content_id")?> 
+<p>
+Title* <br/><?=form_input('title', $row->title)?><br/>
+</p>
 
-            Meta Title<br/>
-            <textarea  cols=65 rows=2 name="meta_title"><?= $row->meta_title ?></textarea>
-            <br/>
 
-            Extra: 
-            <br/><?= form_input('extra', $row->extra) ?><br/>
-            Sidebox:
-            <br/><?= form_input('sidebox', $row->sidebox) ?><br/>
-        </div>
-        <div style="float:left; width:400px;">
-            Add Image<br/>
-            <?=form_upload('userfile')?>
-        </div>
+<?=form_hidden('menu', $row->menu)?>
 
-        <div style="clear:both"></div>
-        <input type="submit" class="wymupdate" value="update" name="upload"/>
-        <?= form_close() ?> 
-    <?php endforeach ?>
-</div>
+
+ <?php if($row->news_image != NULL) { ?>
+<img src="https://s3-eu-west-1.amazonaws.com/<?=$this->bucket?>/<?=$row->news_image?>" style="padding:10px 10px 10px 0;" width="150px">
+<?php } ?>
+<p class="Image">
+    <?= form_label('Image') ?> (not required field)<br/>
+
+<?= form_upload('file') ?>
+</p>
+
+<?php if ($row->category == "gallery") { ?>
+
+    <p>
+        Gallery:<br/>
+
+        <?php
+        $options = array(
+           'portable' => 'Portable',
+            'modular' => 'Modular',
+            'roadshows' => 'Roadshows',
+            'custom_build' => 'Custom Build',
+            'outdoor_exhibitions' => 'Outdoor Exhibitions'
+        );
+        ?>
+    <?= form_dropdown('gallery', $options, $row->gallery) ?>
+    </p>
+
+<?php } ?>
+
+
+
+
+<br/>
+<textarea cols=65 rows=20 name="content" id="content" class='wymeditor'><?=$row->content?></textarea>
+<br/>
+
+
+<strong>None of the fields below are required</strong>
+<hr/>
+Meta Description<br/>
+<textarea  cols=65 rows=2 name="meta_desc"><?=$row->meta_desc?></textarea>
+<br/>
+Meta Keywords<br/>
+<textarea  cols=65 rows=2 name="meta_keywords"><?=$row->meta_keywords?></textarea>
+<br/>
+Meta Title<br/>
+<textarea  cols=65 rows=2 name="meta_title"><?=$row->meta_title?></textarea>
+<br/>
+
+Extra: 
+<br/><?=form_input('extra', $row->extra)?><br/>
+Sidebox:
+<br/><?=form_input('sidebox', $row->sidebox)?><br/>
+
+Slideshow:
+<br/><?=form_input('slideshow', $row->slideshow)?><br/>
+<input type="submit" class="wymupdate" />
+<?=form_close()?> 
+<?php endforeach;?>

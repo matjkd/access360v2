@@ -1,32 +1,59 @@
-<style>
+<?= form_open_multipart("admin/submit_content") ?> 
 
-    label {
-        width:100px;
-        color:#ffffff;
-        float:left;
-    }
-</style>
-<?= form_open("admin/submit_content") ?> 
-<label>Title:</label>
-<?= form_input('title', set_value('title')) ?><br/>
-<label>Menu link:</label>
-<?= form_input('menu', set_value('menu')) ?>
-<br/>
-<label>Added By:</label> 
-<?= form_input('added_by') ?><br/>
-<label>Date:</label> 
-<input type="text" name="date_added" id="datepicker" value=""><br/>
+<p>
+    Title:<br/>
+    <?= form_input('title', set_value('title')) ?>
+</p>
+
+<p>
+    Menu link (not required field):<br/>
+    <?= form_input('menu', set_value('menu')) ?>
+</p>
+
+
+
+
 <?php
 if (!isset($category)) {
     $category = "";
 }
 ?>
-<label>Category:</label>
-<input type="text" name="categoryvisible" id="datepicker" value="<?= set_value('categoryvisible', $categoryvisible) ?>"  disable="disabled" onFocus="this.blur();"><br/>
-<input type="hidden" name="category" id="datepicker" value="<?= set_value('category', $category) ?>"  >
-<label>Content:</label>
-<textarea cols=75 rows=20 name="content" id="content"  class='wymeditor'></textarea>
 
+<p>
+    Category:<br/>
+    <input type="text" name="category"  value="<?= set_value('category', $category) ?>"  disable="disabled" onFocus="this.blur();"><br/>
+</p>
 
-<input type="submit" class="wymupdate" />
+<p class="Image">
+    <?= form_label('Image') ?> <br/>
+
+<?= form_upload('file') ?>
+</p>
+
+<?php if ($category == "gallery") { ?>
+
+    <p>
+        Gallery:<br/>
+
+        <?php
+        $options = array(
+            'portable' => 'Portable',
+            'modular' => 'Modular',
+            'roadshow' => 'Roadshows',
+            'custom_build' => 'Custom Build',
+            'outdoor' => 'Outdoor Exhibitions'
+        );
+        ?>
+    <?= form_dropdown('gallery', $options) ?>
+    </p>
+
+<?php } ?>
+
+<p>
+    Content:<br/>
+    <textarea cols=75 rows=20 name="content" id="content"  class='wymeditor'></textarea>
+
+</p>
+<input type="submit" name="upload" class="wymupdate" />
+
 <?= form_close() ?> 

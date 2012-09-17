@@ -6,6 +6,23 @@
     
 </div>
 
-<a href="<?=base_url()?>admin/add_content">add content</a><br/>
+
+
+
+<h3>News</h3>
+<a href="<?=base_url()?>admin/add_news_content">Add News</a><br/>
+
 <br/>
-<a href="<?=base_url()?>admin/add_news_content">add news</a><br/>
+<br/>
+
+<a href="<?=base_url()?>admin/add_gallery_content">Add gallery content</a><br/>
+
+
+
+
+<h3>Timetables</h3>
+
+
+<a href="<?=base_url()?>admin/add_content">Add content</a><br/>
+<a href="<?=base_url()?>user/management">User Management</a><br/>
+

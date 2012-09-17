@@ -7,8 +7,11 @@ class Admin extends MY_Controller {
         $this->load->library(array('encrypt', 'form_validation'));
         $this->is_logged_in();
         $this->load->model('content_model');
+        $this->load->model('captcha_model');
         $this->load->model('gallery_model');
+        $this->load->model('timetable_model');
         $this->load->model('menu_model');
+        $this->load->library('s3');
     }
 
     function index() {
@@ -26,8 +29,20 @@ class Admin extends MY_Controller {
             $id = $this->uri->segment(3);
         }
         $data['content'] = $this->content_model->get_content($id);
+        $data['captcha'] = $this->captcha_model->initiate_captcha();
         $data['main'] = "pages/dynamic";
         $data['edit'] = "admin/edit/$id";
+        $this->load->vars($data);
+        $this->load->view('template/main');
+    }
+
+    function classes() {
+
+        $data['content'] = $this->content_model->get_content_cat('class');
+         
+        $data['main_content'] = "global/" . $this->config_theme . "/content";
+        
+        $data['sidebox'] = 'classes';
         $this->load->vars($data);
         $this->load->view('template/main');
     }
@@ -38,7 +53,10 @@ class Admin extends MY_Controller {
         $id = $this->uri->segment(3);
         $data['menu'] = $id;
         $data['page'] = $id;
+        $data['sidebox'] = '/sidebox/attachments';
         $data['content'] = $this->content_model->get_content_id($id);
+        $data['attachments'] = $this->content_model->get_attachments($id);
+        $data['captcha'] = $this->captcha_model->initiate_captcha();
         $data['seo_links'] = $this->content_model->get_seo_links();
         $data['main_content'] = "admin/edit_content";
 
@@ -64,24 +82,37 @@ class Admin extends MY_Controller {
     }
 
     function edit_content() {
+        $this->form_validation->set_rules('title', 'title', 'trim');
         $this->form_validation->set_rules('menu', 'menu', 'trim|required');
-
         if ($this->form_validation->run() == FALSE) { // validation hasn'\t been passed
-            echo "validation error"; //improve this
+            echo "validation error";
         } else { // passed validation proceed to post success logic
             $id = $this->uri->segment(3);
             $this->content_model->edit_content($id);
 
-            //check if image added, and upload
-           if ($this->input->post('upload')) {
-                $this->gallery_model->do_upload($id);
-                redirect("admin/edit/$id");
-            }
-            echo "upload failed";
+
+            $this->upload_image($id);
+
+
+            redirect("admin/edit/$id");
         }
-
-
-       
+    }
+    function edit_case_study() {
+    
+    
+    	$id = $this->uri->segment(3);
+    	$data['menu'] = $id;
+    	$data['page'] = $id;
+    	$data['content'] = $this->content_model->get_content('admin');
+    	$data['case'] = $this->content_model->get_case_id($id);
+    	$data['captcha'] = $this->captcha_model->initiate_captcha();
+    	//$data['seo_links'] = $this->content_model->get_seo_links();
+    	$data['main_content'] = "admin/edit_case_study";
+    
+    
+    
+    	$this->load->vars($data);
+    	$this->load->view('template/main');
     }
 
     function edit_product_content() {
@@ -99,6 +130,90 @@ class Admin extends MY_Controller {
         $data['news'] = $this->news_model->list_news();
         $this->load->vars($data);
         $this->load->view('template/main');
+    }
+
+    function timetables($category='studio') {
+        $data['category'] = $category;
+        $data['main_content'] = "admin/timetables";
+
+        $menu = $category . '_timetable';
+        $this->get_content_data($menu);
+        $data['classes'] = $this->content_model->get_content_cat('class');
+        $data['pages'] = $this->content_model->get_all_content();
+        $data['timetable'] = $this->timetable_model->get_timetable($category);
+        $data['days'] = $this->timetable_model->get_timetable_days($category);
+        $data['sidebox'] = "timetable";
+        $this->load->vars($data);
+        $this->load->view('template/main');
+    }
+
+    function edit_timetable($id) {
+        $data['timetable_entry'] = $this->timetable_model->get_entry($id);
+        foreach ($data['timetable_entry'] as $row):
+
+            $data['category'] = $row->timetable_category;
+            $data['timetable_id'] = $row->timetable_id;
+            $data['day'] = $row->day;
+            $data['from'] = $row->from;
+            $data['to'] = $row->to;
+            $data['class'] = $row->class;
+            $data['instructor'] = $row->instructor;
+            $data['description'] = $row->description;
+            $data['level'] = $row->level;
+            $data['where'] = $row->where;
+            $category = $data['category'];
+        endforeach;
+
+        $data['main_content'] = "admin/timetables";
+        $data['classes'] = $this->content_model->get_content_cat('class');
+        $menu = $category . '_timetable';
+        $this->get_content_data($menu);
+
+        $data['pages'] = $this->content_model->get_all_content();
+        $data['timetable'] = $this->timetable_model->get_timetable($category);
+        $data['days'] = $this->timetable_model->get_timetable_days($category);
+        $data['sidebox'] = "timetable";
+        $this->load->vars($data);
+        $this->load->view('template/main');
+    }
+
+    function update_timetable() {
+        $id = $this->input->post('timetable_id');
+        $this->timetable_model->update_timetable($id);
+        redirect($this->agent->referrer());
+    }
+
+    function delete_timetable($id) {
+
+        $this->timetable_model->delete_timetable($id);
+        redirect($this->agent->referrer());
+    }
+
+     function get_content_data($menu) {
+        $data['content'] = $this->content_model->get_content($menu);
+
+        foreach ($data['content'] as $row):
+
+            $data['title'] = $row->title;
+            $data['sidebox'] = $row->sidebox;
+            $data['metatitle'] = $row->meta_title;
+            $data['slideshow_active'] = $row->slideshow;
+            $data['meta_keywords'] = $row->meta_desc;
+            $data['meta_description'] = $row->meta_keywords;
+            $data['slideshow'] = $row->slideshow;
+            $data['content_id'] = $row->content_id;
+
+        endforeach;
+
+        $data['attachments'] = $this->content_model->get_attachments($data['content_id']);
+        $this->load->vars($data);
+        return $data;
+    }
+
+    function add_timetable() {
+
+        $this->timetable_model->add_entry();
+        redirect($this->agent->referrer());
     }
 
     function editnews() {
@@ -120,74 +235,356 @@ class Admin extends MY_Controller {
         redirect("admin/editnews/$id");
     }
 
-    function editpro() {
+    function upload_attachment($id, $name) {
+        $this->gallery_model->upload_attachment();
 
-        $id = $this->uri->segment(3);
-        $data['page'] = 'professionals';
-        $data['content'] = $this->content_model->get_content('professionals');
-        $data['professional'] = $this->professionals_model->get_professional($id);
-        foreach ($data['professional'] as $row):
+        if (!empty($_FILES) && $_FILES['file']['error'] != 4) {
 
-            $data['practice'] = $this->professionals_model->practice_areas();
-            $data['professional_id'] = $id;
-        endforeach;
+            $fileName = $_FILES['file']['name'];
+            $tmpName = $_FILES['file']['tmp_name'];
+            $fileName = str_replace(" ", "_", $fileName);
+            $filelocation = $fileName;
 
-        $data['cases'] = $this->cases_model->list_cases();
+            $thefile = file_get_contents($tmpName, true);
 
-        $data['assigned_cases'] = $this->cases_model->assigned_cases($id);
+            //add filename into database
+            //get blog id
+            if ($id == 0) {
+                $content_id = mysql_insert_id();
+            } else {
+                $content_id = $id;
+            }
+            $this->content_model->add_attachment($fileName, $name, $content_id);
+            //move the file
 
-        $data['news'] = $this->news_model->list_news();
-        $data['main'] = "admin/edit_user";
-        $data['menu'] = $this->content_model->get_menus();
-
-        $data['assigned_practices'] = $this->professionals_model->assigned_practice_areas($id);
-
-        $this->load->vars($data);
-        $this->load->view('template/main');
+            if ($this->s3->putObject($thefile, $this->bucket, $filelocation, S3:: ACL_PUBLIC_READ)) {
+                //echo "We successfully uploaded your file.";
+                $this->session->set_flashdata('message', 'News Added and file uploaded successfully');
+            } else {
+                //echo "Something went wrong while uploading your file... sorry.";
+                $this->session->set_flashdata('message', 'News Added, but your file did not upload');
+            }
+            $this->gallery_path = "./images/temp";
+            unlink($this->gallery_path . '/' . $fileName . '');
+        }
     }
 
-    function edit_pro() {
-        $id = $this->uri->segment(3);
-        $this->professionals_model->edit_pro($id);
-        redirect("admin/editpro/$id");
-    }
+    function upload_image($id = 0) {
 
-    function edit_practice() {
+        $this->gallery_model->do_upload();
 
-        $id = $this->uri->segment(3);
-        $data['page'] = 'practices';
-        $data['content'] = $this->content_model->get_content('news');
-        $data['practice'] = $this->practice_model->get_practice($id);
-        $data['news'] = $this->news_model->list_news();
-        $data['main'] = "admin/edit_practice";
-        $data['menu'] = $this->content_model->get_menus();
-        $this->load->vars($data);
-        $this->load->view('template/main');
-    }
 
-    function edit_practice_submit() {
-        $id = $this->uri->segment(3);
-        $this->practice_model->edit_practice($id);
-        redirect("admin/edit_practice/$id");
+        if (!empty($_FILES) && $_FILES['file']['error'] != 4) {
+
+            $fileName = $_FILES['file']['name'];
+            $tmpName = $_FILES['file']['tmp_name'];
+            $fileName = str_replace(" ", "_", $fileName);
+            $filelocation = $fileName;
+
+            $thefile = file_get_contents($tmpName, true);
+
+            //add filename into database
+            //get blog id
+            if ($id == 0) {
+                $blog_id = mysql_insert_id();
+            } else {
+                $blog_id = $id;
+            }
+            $this->content_model->add_file($fileName, $blog_id);
+            //move the file
+
+            if ($this->s3->putObject($thefile, $this->bucket, $filelocation, S3:: ACL_PUBLIC_READ)) {
+                //echo "We successfully uploaded your file.";
+                $this->session->set_flashdata('message', 'News Added and file uploaded successfully');
+            } else {
+                //echo "Something went wrong while uploading your file... sorry.";
+                $this->session->set_flashdata('message', 'News Added, but your file did not upload');
+            }
+
+            //uploadthumb
+            $thumblocation = base_url() . 'images/temp/thumbs/' . $fileName;
+            $newfilename = "thumb_" . $fileName;
+
+
+            $newfile = file_get_contents($thumblocation, true);
+
+            if ($this->s3->putObject($newfile, $this->bucket, $newfilename, S3:: ACL_PUBLIC_READ)) {
+                //echo "We successfully uploaded your file.";
+                $this->session->set_flashdata('message', 'News Added and file uploaded successfully');
+            } else {
+                //echo "Something went wrong while uploading your file... sorry.";
+                $this->session->set_flashdata('message', 'News Added, but your file did not upload');
+            }
+            
+            //upload medium
+            $mediumlocation = base_url() . 'images/temp/medium/' . $fileName;
+            $newmediumfilename = "medium_" . $fileName;
+            
+            
+            $newmediumfile = file_get_contents($mediumlocation, true);
+            
+            if ($this->s3->putObject($newmediumfile, $this->bucket, $newmediumfilename, S3:: ACL_PUBLIC_READ)) {
+            	//echo "We successfully uploaded your file.";
+            	$this->session->set_flashdata('message', 'News Added and file uploaded successfully');
+            } else {
+            	//echo "Something went wrong while uploading your file... sorry.";
+            	$this->session->set_flashdata('message', 'News Added, but your file did not upload');
+            }
+//delete files from server
+            $this->gallery_path = "./images/temp";
+            unlink($this->gallery_path . '/' . $fileName . '');
+            unlink($this->gallery_path . '/thumbs/' . $fileName . '');
+            unlink($this->gallery_path . '/medium/' . $fileName . '');
+        } else {
+
+            $this->session->set_flashdata('message', 'News Added');
+        }
     }
+    
+    function update_case_study() {
+    	$this->form_validation->set_rules('title', 'Title', 'trim|max_length[255]|required');
+    	$this->form_validation->set_rules('content', 'Content', 'trim');
+    
+    	$id = $this->input->post('case_id');
+    
+    	if ($this->form_validation->run() == FALSE) { // validation hasn'\t been passed
+    		echo "validation error";
+    	} else { // passed validation proceed to post success logic
+    		if ($this->content_model->update_case_study($id)) { // the information has therefore been successfully saved in the db
+    			//now process the image
+    			// run insert model to write data to db
+    			//upload file
+    			//retrieve uploaded file
+    				
+    
+    			$this->load->library('image_lib');
+    
+    			//check image_side field is not null
+    			$image_side_value =  $_FILES['image_side']['name'];
+    			echo $image_side_value;
+    			if($image_side_value != NULL) {
+    				echo " image selected ";
+    				$this->upload_case_image($id, 'image_side', 150);
+    			} else {
+    				echo " no image side ";
+    			}
+    
+    
+    			//check image_1 field is not null
+    
+    			$image_side_value =  $_FILES['image_1']['name'];
+    			echo $image_side_value;
+    			if($image_side_value != NULL) {
+    				echo " image selected ";
+    					
+    				$this->upload_case_image($id, 'image_1', 110);
+    			} else {
+    				echo " no image 1";
+    			}
+    
+    
+    			//check image_2 field is not null
+    			$image_side_value =  $_FILES['image_2']['name'];
+    			echo $image_side_value;
+    			if($image_side_value != NULL) {
+    				echo " image selected ";
+    					
+    				$this->upload_case_image($id, 'image_2', 110);
+    			} else {
+    				echo " no image 2";
+    			}
+    
+    
+    			//check image_3 field is not null
+    			$image_side_value =  $_FILES['image_3']['name'];
+    			echo $image_side_value;
+    			if($image_side_value != NULL) {
+    				echo " image selected ";
+    					
+    				$this->upload_case_image($id, 'image_3', 110);
+    			} else {
+    				echo " no image 3";
+    			}
+    
+    
+    			//check pdf field is not null
+    
+    			$pdf_value =  $_FILES['pdf']['name'];
+    			echo $pdf_value;
+    			if($pdf_value != NULL) {
+    				$this->upload_pdf($id);
+    				echo " pdf";
+    			} else {
+    				echo " no pdf";
+    			}
+    
+    
+    			redirect('/admin/edit_case_study/'.$id);   // or whatever logic needs to occur
+    		} else {
+    			echo 'An error occurred saving your information. Please try again later';
+    			// Or whatever error handling is necessary
+    		}
+    	}
+    }
+    
+    function upload_case_image($id = 0, $field = 0, $height = 110) {
+    
+    	if($field === 0) {
+    		$field = "image_1";
+    	} else {
+    		$field = $field;
+    	}
+    
+    	$this->gallery_model->do_case_upload($field, $height);
+    	$this->gallery_path = "/images/temp";
+    
+    	if (!empty($_FILES) && $_FILES[$field]['error'] != 4) {
+    
+    		$fileName = $_FILES[$field]['name'];
+    		$tmpName = $_FILES[$field]['tmp_name'];
+    		$fileName = str_replace(" ", "_", $fileName);
+    		$filelocation = $fileName;
+    
+    		$thefile = file_get_contents($tmpName, true);
+    
+    		//add filename into database
+    		//get blog id
+    		if ($id == 0) {
+    			$blog_id = mysql_insert_id();
+    		} else {
+    			$blog_id = $id;
+    		}
+    
+    		$this->content_model->add_file_to_case($fileName, $blog_id, $field);
+    		//move the file
+    
+    
+    
+    
+    		if ($this->s3->putObject($thefile, $this->bucket, $filelocation, S3:: ACL_PUBLIC_READ)) {
+    			//echo "We successfully uploaded your file.";
+    			$this->session->set_flashdata('message', 'News Added and file uploaded successfully');
+    		} else {
+    			//echo "Something went wrong while uploading your file... sorry.";
+    			$this->session->set_flashdata('message', 'News Added, but your file did not upload');
+    		}
+    
+    		//put thumb on s3
+    			
+    		$thumbFile =$this->config_base_path . $this->gallery_path . '/thumbs/'.$fileName  ;
+    		$thumbfilelocation =  'thumbs/'.$fileName;
+    		$thumb = file_get_contents($thumbFile, true);
+    
+    		if ($this->s3->putObject($thumb, $this->bucket, $thumbfilelocation, S3:: ACL_PUBLIC_READ)) {
+    			//echo "We successfully uploaded your file.";
+    			$this->session->set_flashdata('message', 'thumb Added and file uploaded successfully');
+    		} else {
+    			//echo "Something went wrong while uploading your file... sorry.";
+    			$this->session->set_flashdata('message', 'your file did not upload');
+    		}
+    
+    		//delete files from server
+    		$this->gallery_path = "./images/temp";
+    		unlink($this->gallery_path . '/' . $fileName . '');
+    		unlink($this->gallery_path . '/thumbs/' . $fileName . '');
+    	} else {
+    
+    		$this->session->set_flashdata('message', 'News Added');
+    	}
+    }
+    
+    function upload_pdf($id = 0) {
+    
+    	$this->gallery_model->do_upload_pdf();
+    
+    
+    	if (!empty($_FILES) && $_FILES['pdf']['error'] != 4) {
+    
+    		$fileName = $_FILES['pdf']['name'];
+    		$tmpName = $_FILES['pdf']['tmp_name'];
+    		$fileName = str_replace(" ", "_", $fileName);
+    		$filelocation = $fileName;
+    
+    		$thefile = file_get_contents($tmpName, true);
+    
+    		//add filename into database
+    		//get blog id
+    		if ($id == 0) {
+    			$blog_id = mysql_insert_id();
+    		} else {
+    			$blog_id = $id;
+    		}
+    
+    		$this->content_model->add_pdf_to_case($fileName, $blog_id);
+    		//move the file
+    
+    			
+    			
+    		if ($this->s3->putObject($thefile, $this->bucket, $filelocation, S3:: ACL_PUBLIC_READ, array(), array('Content-Type'=>'application/pdf'))) {
+    			//echo "We successfully uploaded your file.";
+    			$this->session->set_flashdata('message', ' pdf uploaded successfully');
+    		} else {
+    			//echo "Something went wrong while uploading your file... sorry.";
+    			$this->session->set_flashdata('message', 'your pdf did not upload');
+    		}
+    
+    
+    		//delete files from server
+    		$this->gallery_path = "./images/temp";
+    		unlink($this->gallery_path . '/' . $fileName . '');
+    
+    	} else {
+    
+    		$this->session->set_flashdata('message', 'pdf Added');
+    	}
+    }
+    
 
     function submit_content() {
-        $this->form_validation->set_rules('title', 'Title', 'trim|max_length[255]');
+        $this->form_validation->set_rules('title', 'Title', 'trim|max_length[255]|required');
         $this->form_validation->set_rules('content', 'Content', 'trim');
-        $this->form_validation->set_rules('menu', 'menu', 'trim|required');
+        $this->form_validation->set_rules('menu', 'menu', 'trim');
         $this->form_validation->set_rules('category', 'Page Type', 'trim|max_length[11]');
         $this->form_validation->set_error_delimiters('<br /><span class="error">', '</span>');
 
         if ($this->form_validation->run() == FALSE) { // validation hasn'\t been passed
-            echo validation_errors();
+            echo "validation error";
         } else { // passed validation proceed to post success logic
             if ($this->content_model->add_content()) { // the information has therefore been successfully saved in the db
-                redirect('/admin');   // or whatever logic needs to occur
+                //now process the image
+                // run insert model to write data to db
+                //upload file
+                //retrieve uploaded file
+                $this->upload_image();
+
+
+
+
+               redirect('/admin');   // or whatever logic needs to occur
             } else {
                 echo 'An error occurred saving your information. Please try again later';
                 // Or whatever error handling is necessary
             }
         }
+    }
+
+    function add_attachment($id) {
+        $this->form_validation->set_rules('name', 'Name', 'trim|max_length[255]|required');
+        if ($this->form_validation->run() == FALSE) { // validation hasn'\t been passed
+            echo "validation error";
+        } else { // passed validation proceed to post success logic
+            $name = $this->input->post('name');
+            $this->upload_attachment($id, $name);
+
+            redirect("admin/edit/$id");
+        }
+    }
+
+    function delete_attachment($id) {
+        //delete attachment from database
+        $this->content_model->delete_attachment($id);
+        redirect($this->agent->referrer());
+        //delete attachment from S3
     }
 
     function add_case() {
@@ -332,15 +729,99 @@ class Admin extends MY_Controller {
         $this->load->view('template/main');
     }
 
-    function add_news_content() {
-        $data['title'] = "News Admin";
+    function add_seo_content() {
+        $data['slideshowtoggle'] = "off";
         $data['main_content'] = "admin/add_content";
         $data['seo_links'] = $this->content_model->get_seo_links();
+        $data['captcha'] = $this->captcha_model->initiate_captcha();
         $data['pages'] = $this->content_model->get_all_content();
-        $data['category'] = "2";
-        $data['categoryvisible'] = "news";
+        $data['category'] = "seo";
         $this->load->vars($data);
         $this->load->view('template/main');
+    }
+
+    function add_news_content() {
+        $data['slideshowtoggle'] = "off";
+        $data['main_content'] = "admin/add_content";
+        $data['seo_links'] = $this->content_model->get_seo_links();
+        $data['captcha'] = $this->captcha_model->initiate_captcha();
+        $data['pages'] = $this->content_model->get_all_content();
+        $data['category'] = "news";
+        $this->load->vars($data);
+        $this->load->view('template/main');
+    }
+    function add_case_study() {
+    	$id = "add_content";
+    	$data['content'] = $this->content_model->get_content($id);
+    	$data['menu'] ="Add Content";
+    	$data['main_content'] = "admin/add_case_study";
+    	$data['pages'] = $this->content_model->get_all_content();
+    
+    	$this->load->vars($data);
+    	$this->load->view('template/main');
+    }
+    
+    
+    function submit_case_study() {
+    	$this->form_validation->set_rules('title', 'Title', 'trim|max_length[255]|required');
+    	$this->form_validation->set_rules('content', 'Content', 'trim');
+    
+    
+    	if ($this->form_validation->run() == FALSE) { // validation hasn'\t been passed
+    		echo "validation error";
+    	} else { // passed validation proceed to post success logic
+    		if ($this->content_model->add_case_study()) { // the information has therefore been successfully saved in the db
+    			//now process the image
+    			// run insert model to write data to db
+    			//upload file
+    			//retrieve uploaded file
+    			$blog_id = mysql_insert_id();
+    			$this->upload_case_image($blog_id);
+    			$this->upload_pdf($blog_id);
+    
+    
+    		//	redirect('/admin');   // or whatever logic needs to occur
+    		} else {
+    			echo 'An error occurred saving your information. Please try again later';
+    			// Or whatever error handling is necessary
+    		}
+    	}
+    }
+    
+
+    function add_class_content() {
+        $data['slideshowtoggle'] = "off";
+        $data['main_content'] = "admin/add_content";
+        $data['seo_links'] = $this->content_model->get_seo_links();
+        $data['captcha'] = $this->captcha_model->initiate_captcha();
+        $data['pages'] = $this->content_model->get_all_content();
+        $data['category'] = "class";
+        $this->load->vars($data);
+        $this->load->view('template/main');
+    }
+
+    function add_gallery_content() {
+        $data['slideshowtoggle'] = "off";
+        $data['main_content'] = "admin/add_content";
+        $data['seo_links'] = $this->content_model->get_seo_links();
+        $data['captcha'] = $this->captcha_model->initiate_captcha();
+        $data['pages'] = $this->content_model->get_all_content();
+        $data['category'] = "gallery";
+        $this->load->vars($data);
+        $this->load->view('template/main');
+    }
+
+    function sort_gallery() {
+        $pages = $this->input->post('pages');
+        parse_str($pages, $pageOrder);
+
+        // list id is retrieved from the ID on the sortable list
+        foreach ($pageOrder['gallery'] as $key => $value):
+            mysql_query("UPDATE ignite_content SET `order` = '$key' WHERE `content_id` = '$value'") or die(mysql_error());
+
+
+        //$this->db->update('practice_area_links', $pro_update);
+        endforeach;
     }
 
     function is_logged_in() {
