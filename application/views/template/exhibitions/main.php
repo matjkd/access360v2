@@ -99,16 +99,24 @@
 				<?=$this->load->view($sidebox)?>
 				<?php } ?>
 			</div>
-			<?php }?>
-
+			
 			<div class="two-thirds  column">
 
 				<?= $this->load->view('global/alert') ?>
 				<?= $this->load->view($main_content) ?>
 			</div>
+			<?php }?>
+
+			
 
 			<?php if($side == 'right') {?>
-			<div class="one-third  column">
+
+<div class="one-third  column">
+
+				<?= $this->load->view('global/alert') ?>
+				<?= $this->load->view($main_content) ?>
+			</div>
+			<div class="two-thirds  column">
 				&nbsp;
 				<?php if(isset($sidebox) && $sidebox != NULL) { ?>
 
