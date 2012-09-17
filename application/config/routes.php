@@ -38,20 +38,37 @@
 |
 */
 
-$route['default_controller'] = "welcome/main";
+$route['default_controller'] = "welcome";
+$route['access360'] = '/welcome/home';
 $route['about'] = '/welcome/home';
-$route['menu'] = 'menus/list_menus';
+$route['contact'] = '/welcome/home';
+$route['menus'] =  '/welcome/home';
 $route['gallery'] = '/welcome/home';
+$route['news'] = '/welcome/home';
 $route['events'] = '/welcome/home';
 $route['contact'] = '/welcome/home';
 $route['social'] = '/welcome/home';
-$route['jobs'] = '/welcome/home';
+$route['testimonials'] = '/welcome/home';
 $route['login'] = '/welcome/login';
-$route['charity'] = '/welcome/home';
-$route['services'] = '/welcome/home';
-$route['design'] = '/welcome/home';
-$route['print'] = '/welcome/home';
-$route['news'] = '/welcome/news';
+$route['gym'] = '/welcome/home';
+$route['studio'] = '/welcome/home';
+$route['bar-restaurant'] = '/welcome/home';
+$route['squash'] = '/welcome/home';
+$route['seniors'] = '/welcome/home';
+$route['class-descriptions'] = '/welcome/home';
+$route['membership'] = '/welcome/home';
+$route['what_we_do'] = '/welcome/home';
+$route['who_are_we'] = '/welcome/home';
+$route['kids-parties'] = '/welcome/home';
+$route['fit-kids'] = '/welcome/home';
+$route['case-studies'] = '/welcome/home';
+$route['outdoor'] = '/welcome/gallery';
+$route['custom_build'] = '/welcome/gallery';
+$route['roadshows'] = '/welcome/gallery';
+$route['modular'] = '/welcome/gallery';
+$route['portable'] = '/welcome/gallery';
+$route['portfolio'] = '/welcome/home';
+
 $route['404_override'] = '';
 
 
