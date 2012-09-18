@@ -58,5 +58,38 @@
 
 	</p>
 	<?php } ?>
+	
+	<?php if(isset($news) && $news != NULL && $menu == "news") { ?>
+<?php foreach($news as $row):?>
+	<h3>
+		<?= $row->title ?>
+	</h3>
+	By Dave Pimlott<br/>
+	<?php
+	$is_logged_in = $this->session->userdata('is_logged_in');
+	if (!isset($is_logged_in) || $is_logged_in == true) {
+		echo "<a href='" . base_url() . "admin/edit/" . $row->content_id . "'>edit this item</a><br/>";
+	}
+	?>
+	<?php
+	if (isset($age)) {
+		$body = str_replace("[age]", "$age", "$row->content");
+	} else {
+		$body = $row->content;
+	}
+	?>
 
+
+	<?php $body = str_replace("Access360", "<strong>Access360</strong>", "$body"); ?>
+
+
+	<div style="padding-bottom: 10px">
+		<?php if($row->news_image != NULL) {?>
+		<img style="float: right; width: 200px; padding-left: 10px;"
+			src="https://s3-eu-west-1.amazonaws.com/<?=$this->bucket?>/medium_<?=$row->news_image?>" />
+		<?php }?>
+		<?= $body ?>
+	</div>
+	<?php endforeach;?>
+<?php }?>
 </div>

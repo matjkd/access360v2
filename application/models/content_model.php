@@ -28,10 +28,11 @@ class Content_model extends CI_Model {
         }
     }
 
-    function get_gallery($gallery) {
+    function get_gallery($gallery, $limit=100) {
 
         $this->db->where('gallery', $gallery);
         $this->db->order_by('order');
+		$this->db->limit($limit);
         $query = $this->db->get('content');
         if ($query->num_rows > 0) {
             return $query->result();

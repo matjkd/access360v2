@@ -2,14 +2,23 @@
 -webkit-transition:All 11s ease;
 -moz-transition:All 11s ease;
 -o-transition:All 11s ease;
--webkit-transform: rotate(4deg) scale(1) skew(1deg) translate(10px);
--moz-transform: rotate(4deg) scale(1) skew(1deg) translate(10px);
--o-transform: rotate(4deg) scale(1) skew(1deg) translate(10px);
+-webkit-transform: rotate(0deg) scale(1) skew(0deg) translate(0px);
+-moz-transform: rotate(0deg) scale(1) skew(0deg) translate(0px);
+-o-transform: rotate(0deg) scale(1) skew(0deg) translate(0px);
 }
 .cog:hover{
--webkit-transform: rotate(234deg) scale(1) skew(1deg) translate(0px);
--moz-transform: rotate(234deg) scale(1) skew(1deg) translate(0px);
--o-transform: rotate(234deg) scale(1) skew(1deg) translate(0px);
+-webkit-transform: rotate(234deg) scale(1) skew(0deg) translate(0px);
+-moz-transform: rotate(234deg) scale(1) skew(0deg) translate(0px);
+-o-transform: rotate(234deg) scale(1) skew(0deg) translate(0px);
+}
+
+.cogsContainer {
+	position:relative;
+	display:block;
+	width:600px;
+	height:400px;
+	margin-left:40px;
+	margin-top:20px;
 }
 
 #digitalSignageCog {
@@ -27,3 +36,32 @@
 	height:117px;
 	background:url("cogs/contactCog.png");	
 }
+
+#signageCog {
+	width:141px;
+	height:142px;
+	background:url("cogs/signageCog.png");	
+}
+
+#experientialCog {
+	width:208px;
+	height:208px;
+	background:url("cogs/experientialCog.png");	
+}
+
+#exhibitionCog {
+	width:153px;
+	height:153px;
+	background:url("cogs/exhibitionCog.png");	
+}
+
+
+
+
+#experientialContainer {position:absolute; top:135px; left:250px;background:url("cogs/experientialInner.png");}
+#exhibitionContainer {position:absolute; top:30px; left:400px; background:url("cogs/exhibitionInner.png");}
+#signageContainer {position:absolute; top:110px; left:116px; background:url("cogs/signageInner.png");}
+#contactContainer {position:absolute; top:170px; left:0px; background:url("cogs/contactInner.png");}
+#posContainer {position:absolute; top:-60px; left:187px; background:url("cogs/posInner.png");} 
+#digitalContainer {position:absolute; top:0px; left:0px; background:url("cogs/digitalSignageInner.png");} 
+

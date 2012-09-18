@@ -29,11 +29,7 @@ Title* <br/><?=form_input('title', $row->title)?><br/>
 
         <?php
         $options = array(
-           'portable' => 'Portable',
-            'modular' => 'Modular',
-            'roadshows' => 'Roadshows',
-            'custom_build' => 'Custom Build',
-            'outdoor_exhibitions' => 'Outdoor Exhibitions'
+           'latestwork' => 'latestwork'
         );
         ?>
     <?= form_dropdown('gallery', $options, $row->gallery) ?>

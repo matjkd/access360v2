@@ -37,11 +37,7 @@ if (!isset($category)) {
 
         <?php
         $options = array(
-            'portable' => 'Portable',
-            'modular' => 'Modular',
-            'roadshow' => 'Roadshows',
-            'custom_build' => 'Custom Build',
-            'outdoor' => 'Outdoor Exhibitions'
+           'latestwork' => 'latestwork'
         );
         ?>
     <?= form_dropdown('gallery', $options) ?>

@@ -24,7 +24,7 @@
 	{
 		echo "<div class='admin_menu_container'><div class='admin_menu'>";
 		echo anchor('/admin/add_gallery_content', 'Add Gallery Item');
-		echo anchor('/admin/add_case_study', 'Add Case Study');
+		echo anchor('/admin/add_news_content', 'Add News');
 		echo "</div></div>";
 	}
 
@@ -37,8 +37,7 @@
 		<div id="" class="one-third column">
 
 			<div class="boxesFront ">
-				<a href="<?=base_url()?>"><img height="130px"
-					src="<?=base_url()?>images/icons/exhibitionsLogo.png" /> </a>
+				<a href="<?=base_url()?>news">News</a> | <a href="<?=base_url()?>contact">Contact</a>
 			</div>
 
 
@@ -46,15 +45,10 @@
 
 		<div id="" class="two-thirds column">
 
-			<?php if(!isset($titleImage) || $titleImage == NULL) {
-				$title = "frontTitle.png";
-			} else {
-				$title = $titleImage;
-			}
-			?>
+		
 
 			<div class="boxesFront mainTitle">
-				<img height="95px" src="<?=base_url()?>images/icons/<?=$title?>" />
+				<a href="http://twitter.com/access_360"><img src="<?=base_url()?>images/icons/followUs.png" /></a>
 			</div>
 
 
@@ -92,7 +86,7 @@
              		if($side == 'left') {?>
 
 			<div class="one-third  column">
-			&nbsp;
+			
 				<?php if(isset($sidebox) && $sidebox != NULL) { ?>
 
 
@@ -111,7 +105,7 @@
 
 			<?php if($side == 'right') {?>
 
-<div class="one-third  column">
+<div class="one-third column">
 
 				<?= $this->load->view('global/alert') ?>
 				<?= $this->load->view($main_content) ?>
@@ -133,7 +127,7 @@
 		<div style="clear: both;"></div>
 		<div class="sixteen columns">
 
-			<?= $this->load->view('global/' . $this->config_theme . '/footer_menu') ?>
+			<?= $this->load->view('global/' . $this->config_theme . '/latestworkFooter') ?>
 
 		</div>
 
