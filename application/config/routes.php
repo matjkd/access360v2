@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> create access360 template
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 /*
 | -------------------------------------------------------------------------
@@ -74,6 +77,7 @@ $route['404_override'] = '';
 
 
 /* End of file routes.php */
+<<<<<<< HEAD
 =======
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 /*
@@ -151,4 +155,6 @@ $route['404_override'] = '';
 
 /* End of file routes.php */
 >>>>>>> 42346483de52a23423eefe1ccb9fabaf409938cf
+=======
+>>>>>>> create access360 template
 /* Location: ./application/config/routes.php */
