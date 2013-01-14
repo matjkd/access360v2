@@ -46,6 +46,7 @@ class Welcome extends MY_Controller {
 	function get_content_data($menu) {
 		$data['content'] = $this->content_model->get_content($menu);
 		$data['case_studies'] = $this->content_model->get_case_studies();
+		$data['latest'] = $this->content_model->get_gallery('latestwork', 4);
 		foreach ($data['content'] as $row):
 		 
 		$data['title'] = $row->title;
@@ -114,7 +115,7 @@ class Welcome extends MY_Controller {
 		
 		//get the content based on the menu, content now gets all the gallery items
 		$data['baseContent'] = $this->content_model->get_content($gallery);
-		
+		$data['latest'] = $this->content_model->get_gallery('latestwork', 4);
 		foreach ($data['baseContent'] as $row):
 		
 		 		$data['titleImage'] = $row->titleImage;

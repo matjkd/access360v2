@@ -1,3 +1,4 @@
+<p><a href="<?=base_url()?>"><img src="https://s3-eu-west-1.amazonaws.com/access360assets/logoBig.png" alt="access360" /></a></p>
 Access360 Ltd,<br/>
 Ilgars Manor,<br/>
 Workhouse Lane,<br/>

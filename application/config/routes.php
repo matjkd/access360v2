@@ -66,9 +66,9 @@ $route['outdoor'] = '/welcome/gallery';
 $route['custom_build'] = '/welcome/gallery';
 $route['roadshows'] = '/welcome/gallery';
 $route['modular'] = '/welcome/gallery';
-$route['portable'] = '/welcome/gallery';
+$route['latestwork'] = '/welcome/gallery';
 $route['portfolio'] = '/welcome/home';
-
+$route['terms'] = '/welcome/home';
 $route['404_override'] = '';
 
 

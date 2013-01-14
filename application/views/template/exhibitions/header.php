@@ -50,8 +50,15 @@ if (isset($meta_description) && $meta_description != NULL) {
 <link rel="stylesheet" href="<?= base_url() ?>css/<?=$this->config_theme?>/layout.css">
 <link rel="stylesheet" href="<?= base_url() ?>css/<?=$this->config_theme?>/skeleton.css">
 <link rel="stylesheet" href="<?= base_url() ?>css/<?=$this->config_theme?>/accordion.css">
+<link rel="stylesheet" href="<?= base_url() ?>css/<?=$this->config_theme?>/cogs.css">
 <link rel="stylesheet" href="<?= base_url() ?>css/<?=$this->config_theme?>/template.css?20082012">
-
+<!--[if gte IE 9]>
+  <style type="text/css">
+    .gradient {
+       filter: none;
+    }
+  </style>
+<![endif]-->
 <!--[if lt IE 8]>    <link rel="stylesheet" href="<?= base_url() ?>css/<?=$this->config_theme?>/ie8.css"> <![endif]-->
 
 <link rel="stylesheet" media="handheld" href="<?= base_url() ?>css/handheld.css?v=2">  

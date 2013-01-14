@@ -34,7 +34,4 @@
 </div>
 
    
-<div class="boxesFooter smallprint" >
-
-    Terms and Conditions | Site Map | Contact
-</div>
+	<?= $this->load->view('global/' . $this->config_theme . '/smallprint') ?>
