@@ -4,7 +4,7 @@
      Remove this if you use the .htaccess -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-<title><?= $title ?></title>
+<title><?php if(isset($title) && $title != NULL) { echo $title;} else { echo "Access360"; }?></title>
 <meta name="description" content="">
 <meta name="author" content="">
 <meta name="google-site-verification" content="5Bca4n2lBoi_50eivq5aQiBHEKzJoUk9O-twnLjFUL0" />

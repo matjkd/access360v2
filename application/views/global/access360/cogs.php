@@ -81,10 +81,10 @@
 
 <!--news cog-->
 <div id="newscoglogodiv">
-    <a href="<?=base_url()?>news" > <img id="newscoglogo" class="thumbnail" src="<?= base_url() ?>images/cogs/news.png"  style="-webkit-transform: rotate(0deg); " onLoad="window.setTimeout('init()',40)"/></a>
+    <a href="" rel="#twitteroverlay" id="twitter"> <img id="newscoglogo" class="thumbnail" src="<?= base_url() ?>images/cogs/news.png"  style="-webkit-transform: rotate(0deg); " onLoad="window.setTimeout('init()',40)"/></a>
 </div>
 <div id="newscogdiv">
-    <a href="#"><img id="newscog"  src="<?= base_url() ?>images/cogs/cog1.png"  style="-webkit-transform: rotate(0deg); " onLoad="window.setTimeout('init()',40)"/></a>
+    <a   href="#"><img id="newscog"  src="<?= base_url() ?>images/cogs/cog1.png"  style="-webkit-transform: rotate(0deg); " onLoad="window.setTimeout('init()',40)"/></a>
 </div>
 <!--end of news cog-->
 

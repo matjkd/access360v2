@@ -3,6 +3,16 @@
      
     <!-- #customize your modal window here -->
  
+  <div class="apple_overlay" id="twitteroverlay">
+  	 <div class="twitterWrap">
+ <a class="twitter-timeline" href="https://twitter.com/access_360" data-widget-id="291184507749539840">Tweets by @access_360</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</div>
+
+</div>
+ 
+ 
+ 
     <div class="apple_overlay" id="contactoverlay">
         
         
@@ -24,7 +34,7 @@
 
 	<!-- the external content is loaded inside this tag -->
 	<div class="contentWrap">
-		
+<h2>Access 360</h2>		
 		 <p>Access360 provides a comprehensive solution to all aspects of visual marketing.
 		 	 Whether signage, exhibitions or experiential marketing, we have a knowledge that surpasses all,
 		 	  the result of which is a carefully controlled campaign designed to attract attention whilst maintaining
