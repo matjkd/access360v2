@@ -25,7 +25,7 @@
 	<!-- the external content is loaded inside this tag -->
 	<div class="contentWrap">
 		
-		Coming Soon
+		  <?=$this->load->view('extra/contact_form')?>
 		
 	</div>
 

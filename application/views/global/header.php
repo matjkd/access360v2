@@ -4,7 +4,7 @@
        Remove this if you use the .htaccess -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title><?php if(isset($title)) { echo $title;} else { echo "Access360"; }?></title>
+  <title><?php if(isset($title) && $title != NULL) { echo $title;} else { echo "Access360"; }?> - </title>
   <meta name="description" content="">
   <meta name="author" content="">
 
