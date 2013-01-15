@@ -23,6 +23,10 @@
 <div class="apple_overlay" id="overlay">
 
 	<!-- the external content is loaded inside this tag -->
-	<div class="contentWrap"></div>
+	<div class="contentWrap">
+		
+		Coming Soon
+		
+	</div>
 
 </div>
