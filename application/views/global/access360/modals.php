@@ -25,7 +25,24 @@
 	<!-- the external content is loaded inside this tag -->
 	<div class="contentWrap">
 		
-		  <?=$this->load->view('extra/contact_form')?>
+		 <p>Access360 provides a comprehensive solution to all aspects of visual marketing.
+		 	 Whether signage, exhibitions or experiential marketing, we have a knowledge that surpasses all,
+		 	  the result of which is a carefully controlled campaign designed to attract attention whilst maintaining
+		 	   a strict control on budgets </p>
+
+<p>With pioneering techniques and the latest advanced solutions, Access360 
+provide a fresh new approach from the outset by not only creating a
+ solution for your project but also an education of what is also possible. </p>
+ 
+<p>The complexity of the industry often presents problems whether from a
+ construction or budgetary point of view and this is where we excel.
+  Whether you require a car placed on the roof of a building, a roll
+   out signage program or a staffed exhibition on the other side of 
+   the world, you will be amazed at the competence and value for money 
+   that Access360 will provide. </p>
+ 
+<p>At Access360 we value our clients highly and pride ourselves with a 
+track record of continued happy clients – is it not time you joined our gang! </p>
 		
 	</div>
 
