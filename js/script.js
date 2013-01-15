@@ -34,9 +34,10 @@ $(function() {
 
 $(document).ready(function() {
     
-    $("#newsimage img[rel]").overlay({
+    $("#twitteroverlay img[rel]").overlay({
           
-        
+        mask: 'dark',
+        effect: 'apple'
         });
     
 
