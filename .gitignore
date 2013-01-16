@@ -7,3 +7,4 @@ stats/*
 awstatsicons
 awstats-icon
 *.*~
+.DS_Store
