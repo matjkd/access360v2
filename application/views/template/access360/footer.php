@@ -15,6 +15,7 @@
 <script src="<?= base_url() ?>js/wymeditor/jquery.wymeditor.min.js"></script>
 
 <script src="<?= base_url() ?>js/plugins.js"></script>
+<script src="<?= base_url() ?>js/parallax.js"></script>
 <script src="<?= base_url() ?>js/access360/plugins.js"></script>
 
 <script src="<?= base_url() ?>js/script.js"></script>

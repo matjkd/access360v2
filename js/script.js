@@ -92,3 +92,15 @@ $(document).ready(function() {
 $(window).load(function() {
     $.backstretch(base_url +"images/backgrounds/cogbackground.jpg");
 });
+
+$(document).ready(function() {
+    
+  
+    // Declare parallax on layers
+    jQuery('.parallax-layer').parallax({
+      mouseport: jQuery("#port"),
+      yparallax: false
+    });
+  
+  	
+});
