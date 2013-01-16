@@ -38,7 +38,7 @@
             <div class="grid_18">
                 <img src="<?= base_url() ?>images/logos/explore.png"/>
             </div>
- <!-- <?= $this->load->view('global/access360/thumbs') ?> -->
+
         </div>
         
          <div id="menutop" style="clear:both;">
