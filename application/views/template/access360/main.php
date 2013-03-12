@@ -9,9 +9,21 @@
     <meta name="author" content="">
 
     <!-- CSS -->
-    <link href="<?=base_url()?>css/bootstrap.css" rel="stylesheet">
-    <link href=".<?=base_url()?>css/bootstrap-responsive.css" rel="stylesheet">
-     <link href="<?=base_url()?>css/<?=$this->config_theme?>/styles.css" rel="stylesheet">
+  	<!-- CSS -->
+		<link href="<?=base_url() ?>css/bootstrap.css" rel="stylesheet">
+		<link href=".<?=base_url() ?>css/bootstrap-responsive.css" rel="stylesheet">
+	
+		<link href="<?=base_url() ?>css/<?=$this -> config_theme ?>/speed-use.css" rel="stylesheet">
+		
+		<link href="<?=base_url() ?>css/<?=$this -> config_theme ?>/styles.css" rel="stylesheet">
+
+		<script type="text/javascript" src="//use.typekit.net/tfb0iji.js"></script>
+		<script type="text/javascript">
+			try {
+				Typekit.load();
+			} catch(e) {
+			}
+		</script>
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -27,6 +39,7 @@
   </head>
 
   <body>
+  	 <input type="hidden" id="baseurl" value="<?= base_url() ?>"/>
 <div class="bodycontain">
     <div class="navbar navbar-inverse ">
     	
@@ -55,12 +68,7 @@
     <div class="container">
 
       <!-- Main hero unit for a primary marketing message or call to action -->
-      <div class="hero-unit">
-        <h1>Hello, world!</h1>
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-        <p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p>
-      </div>
-
+     <?=$this->load->view('template/access360/space')?>
    
     
 
@@ -68,18 +76,22 @@
 
     </div> <!-- /container -->
     </div>
-   <footer>
-   	<div class="container">
-        <p>&copy; Company 2012</p>
-       </div>
-      </footer>
+  <footer>
+			<div class="container">
+				<?=$this -> load -> view('template/access360/pagefooter') ?>
+			</div>
+		</footer>
 
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script src="<?=base_url()?>js/bootstrap.js"></script>
-  
+   
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+		<script src="<?=base_url() ?>js/bootstrap.js"></script>
+		<script src="<?=base_url() ?>js/plugins.js"></script>
+	
+		<script src="<?=base_url() ?>js/parallax.js"></script>
+		<script src="<?=base_url() ?>js/script.js?2"></script>
 
   </body>
 </html>

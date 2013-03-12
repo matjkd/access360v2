@@ -5,7 +5,8 @@
       }
       
       .bodycontain {
-      	 background:#000;
+      	 background:url('images/galaxy.jpg');
+      	 background-size: cover;
       }
       footer {
       	background:#fff;
@@ -19,7 +20,7 @@
   	
   	width:152px;
   	height:85px;
-  	margin:40px auto;
+  	margin:15px auto;
   	
   }   
   .logo img {
