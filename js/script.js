@@ -29,13 +29,11 @@ function sunglow() {
 	$('.sunglow').fadeIn(5000);
 	$('.sunglow').fadeOut(5000);
 	$('.sunglow').fadeIn(5000);
-	
+
 }
 
 
 $(document).ready(function() {
-
-	sunglow();
 
 	// Declare parallax on layers
 	$('.parallax-layer').parallax({
@@ -51,13 +49,36 @@ $(document).ready(function() {
 
 	//planet hover target
 	$('.planet').hover(function() {
-sunglow();
-		$(this).children('.target').stop().animate({opacity:1});
-		$(this).children('.target_text').stop().animate({opacity:1});
+		sunglow();
+
+		$(this).children('.target').stop().animate({
+			opacity : 1
+		});
+		$(this).children('.target_text').stop().animate({
+			opacity : 1
+		});
 
 	}, function() {
-		$(this).children('.target').stop().animate({opacity:0.3});
-		$(this).children('.target_text').stop().animate({opacity:0.3});
+		$(this).children('.target').stop().animate({
+			opacity : 0.1
+		});
+		$(this).children('.target_text').stop().animate({
+			opacity : 0.7
+		});
 	});
+
+	$('.img_thumb').hover(function() {
+
+		$(this).stop().animate({
+			opacity : 0.5
+		});
+
+	}, function() {
+		$(this).stop().animate({
+			opacity : 1
+		});
+	});
+
+	sunglow();
 
 });

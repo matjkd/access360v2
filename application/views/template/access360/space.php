@@ -11,7 +11,8 @@
 	}
 
 	.planet {
-
+		cursor: crosshair;
+		z-index: 2;
 	}
 	.sun {
 		-moz-box-shadow: 1px 1px 43px rgb(248, 161, 68);
@@ -20,6 +21,7 @@
 		-moz-border-radius: 75px;
 		-webkit-border-radius: 75px;
 		border-radius: 75px;
+		z-index: 2;
 	}
 	.sun img {
 		position: absolute;
@@ -34,11 +36,13 @@
 		border-radius: 75px;
 	}
 	.target {
-		opacity:0.3;
-		cursor: crosshair;
+		position: absolute;
+		opacity: 0.1;
 	}
 	.target_text {
-		opacity:0.3;
+		position: absolute;
+		opacity: 0.7;
+		color: #fff;
 	}
 </style>
 
@@ -46,12 +50,17 @@
 	<!-- Seven image layers, each layer slightly bigger than the one behind, making
 	'closer' layers move faster. -->
 	<div class="parallax-layer"  style="width:94%; height:94%;">
-		<div class="planet"style="position:absolute; left:700px; top:100px;  width:50px; height: 50px;"><img src="<?=base_url() ?>images/space/planet01.png"/>
+		<div class="planet"style="position:absolute; left:550px; top:70px;  width:50px; height: 50px;"><img src="<?=base_url() ?>images/space/planet01.png"/>
 		</div>
 	</div>
 
-	<div class="parallax-layer"  style="width:99%; height:99%;">
-		<div class="planet" style="position:absolute; top:100px; left:150px;  width:120px; height: 80px;"><img src="<?=base_url() ?>images/space/saturn.png"/>
+	<div class="parallax-layer"  style="width:98%; height:98%;">
+		<div class="planet" style="position:absolute; top:40px; left:190px;  width:180px; height:91px;">
+<img style="position:absolute"  src="<?=base_url() ?>images/space/saturn.png"/>
+			<img class="target" src="<?=base_url() ?>images/space/saturnOverlay.png"/>
+			<div class="target_text" style=" top:-20px; left:-30px;">
+				POINT OF SALE
+			</div>
 		</div>
 	</div>
 	<div class="parallax-layer"  style="width:100%; height:100%;">
@@ -62,21 +71,42 @@
 		</div>
 	</div>
 
-	<div class="parallax-layer"  style="width:102%; height:102%;">
-		<div class="planet"style="position:absolute; left:500px; top:190px;  width:70px; height: 70px;"><img src="<?=base_url() ?>images/space/planet01.png"/>
+<div class="parallax-layer"  style="width:102%; height:102%;">
+		<div class="planet" style="position:absolute; left:90px; top:130px;  width:110px; height: 110px;">
+			<img style="position:absolute"  src="<?=base_url() ?>images/space/planet03.png"/>
+			<img class="target" src="<?=base_url() ?>images/space/planet03outline.png"/>
+			<div class="target_text" style=" top:-20px; left:-30px;">
+				DIGITAL SIGNAGE
+			</div>
 		</div>
 	</div>
 
-	<div class="parallax-layer"  style="width:103%; height:103%;">
-		<div class="planet" style="position:absolute; left:250px; top:250px;  width:60px; height: 60px;"><img src="<?=base_url() ?>images/space/planet02.png"/>
+	<div class="parallax-layer"  style="width:102%; height:102%;">
+		<div class="planet"style="position:absolute; left:750px; top:130px;  width:100px; height: 100px;">
+
+			<img style="position:absolute" src="<?=base_url() ?>images/space/planet01.png"/>
+			<img class="target" src="<?=base_url() ?>images/space/planet01overlay.png"/>
+			<div class="target_text" style=" top:-20px; left:70px;">
+				SIGNAGE
+			</div>
+		</div>
+	</div>
+
+	<div class="parallax-layer"  style="width:105%; height:105%;">
+		<div class="planet" style="position:absolute; left:250px; top:250px;  width:90px; height: 90px;">
+			<img style="position:absolute"  src="<?=base_url() ?>images/space/planet02.png"/>
+			<img class="target" src="<?=base_url() ?>images/space/planet02outline.png"/>
+			<div class="target_text" style=" top:90px; left:30px;">
+				EXPERIENTIAL
+			</div>
 		</div>
 	</div>
 
 	<div class="parallax-layer"  style="width:109%; height:109%;">
 		<div class="planet" style="position:absolute; left:630px; top:190px;  width:150px; height: 150px;">
 			<img style="position:absolute" src="<?=base_url() ?>images/space/earth.png"/>
-			<img class="target" style="position:absolute" src="<?=base_url() ?>images/space/earthoutline.png"/>
-			<div class="target_text" style="color:#fff; position:absolute; top:150px; left:-30px;">
+			<img class="target"  src="<?=base_url() ?>images/space/earthoutline.png"/>
+			<div class="target_text" style=" top:150px; left:-30px;">
 				EXHIBITIONS
 			</div>
 		</div>
