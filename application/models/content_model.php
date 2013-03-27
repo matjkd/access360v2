@@ -154,6 +154,13 @@ class Content_model extends CI_Model {
     		return $query->result();
     	}
     }
+	
+	function get_portfolio($type = NULL) {
+		$query = $this->db->get('portfolio');
+    	if ($query->num_rows > 0) {
+    		return $query->result();
+    	}
+	}
     /**
      *
      * @param type $filename

@@ -69,16 +69,18 @@ $(document).ready(function() {
 
 	$('.img_thumb').hover(function() {
 
-		$(this).stop().animate({
-			opacity : 0.5
+		$(this).find('.hoverbox').stop().animate({
+			opacity : 0.9
 		});
 
 	}, function() {
-		$(this).stop().animate({
-			opacity : 1
+		$(this).find('.hoverbox').stop().animate({
+			opacity : 0
 		});
 	});
 
+
+ $('.img_thumb').tooltip();
 	sunglow();
 
 });

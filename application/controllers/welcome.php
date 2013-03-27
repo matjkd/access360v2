@@ -11,15 +11,13 @@ class Welcome extends MY_Controller {
 	}
 
 	public function index() {
-		$segment_active = $this->uri->segment(2);
-		if ($segment_active != NULL) {
-			$data['menu'] = $this->uri->segment(2);
-		} else {
-			$data['menu'] = 'access360';
-		}
+		
+	
+		$data['menu'] = 'access360';
+		
 
 		$data['news'] = $this->content_model->get_content_cat('news');
-
+		$data['portfolio'] = $this->content_model->get_portfolio();
 
 		$this->get_content_data($data['menu']);
 		if ($data['menu'] == 'news') {
@@ -37,16 +35,18 @@ class Welcome extends MY_Controller {
 		if ($this->session->flashdata('message')) {
 			$data['message'] = $this->session->flashdata('message');
 		}
-
+		$data['mainpage'] = "template/access360/space";
 		//  $data['slideshow'] = 'header/slideshow';
 		$this->load->vars($data);
 		$this->load->view('template/main');
 	}
 
 	function get_content_data($menu) {
+		$data['portfolio'] = $this->content_model->get_portfolio();
 		$data['content'] = $this->content_model->get_content($menu);
 		$data['case_studies'] = $this->content_model->get_case_studies();
 		$data['latest'] = $this->content_model->get_gallery('latestwork', 4);
+		
 		foreach ($data['content'] as $row):
 		 
 		$data['title'] = $row->title;
@@ -99,7 +99,9 @@ class Welcome extends MY_Controller {
 		if ($this->session->flashdata('message')) {
 			$data['message'] = $this->session->flashdata('message');
 		}
-
+		
+		$data['mainpage'] = "template/access360/contentpage";
+		
 		//$data['slideshow'] = 'header/slideshow';
 		$this->load->vars($data);
 		$this->load->view('template/main');

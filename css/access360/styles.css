@@ -1,57 +1,103 @@
- body {
-       
-        padding-bottom: 0px;
-       
-      }
-      
-      .bodycontain {
-      	 background:url('images/galaxy.jpg');
-      	 background-size: cover;
-      }
-      footer {
-      	background:#fff;
-  	border-top:#f7941e solid 3px;
-      }
-      
-      
-  .logo {
-  	
-  	display:block;
-  	
-  	width:152px;
-  	height:85px;
-  	margin:15px auto;
-  	
-  }   
-  .logo img {
-  	width:152px;
-  	height:85px;
-  } 
-  .navbar-access {
-  	background:#fff;
-  	border-bottom:#f7941e solid 3px;
-  }
+body {
 
-#navcontainer ul
-{
-margin: 0;
-padding: 0;
-list-style-type: none;
-text-align: center;
+	padding-bottom: 0px;
+	
 }
 
-#navcontainer ul li { display: inline; }
-
-#navcontainer ul li a
-{
-text-decoration: none;
-padding: .2em 1em;
-color: #555;
-
+h1, h2, h3, h4 {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 200;
 }
 
-#navcontainer ul li a:hover
-{
-color: #f7941e;
+.bodycontain {
+	background: url('images/galaxy.jpg');
+	background-size: cover;
+}
+footer {
+	background: #fff;
+	border-top: #f7941e solid 3px;
+}
 
+[class*="span"] {
+
+	margin-left: 0px;
+}
+.row {
+	margin-left: 0px;
+}
+
+.logo {
+
+	display: block;
+	width: 152px;
+	height: 85px;
+	margin: 15px auto;
+}
+.logo img {
+	width: 152px;
+	height: 85px;
+}
+.navbar-access {
+	background: #fff;
+	border-bottom: #f7941e solid 3px;
+}
+
+#navcontainer ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	text-align: center;
+}
+
+#navcontainer ul li {
+	display: inline;
+}
+
+#navcontainer ul li a {
+	text-decoration: none;
+	padding: .2em 1em;
+	color: #555;
+}
+
+#navcontainer ul li a:hover {
+	color: #f7941e;
+}
+
+.mainbody {
+
+	margin-bottom:0px;
+	margin-top:0px;
+	background-color: rgba(255, 255, 255, 0.85);
+	border-bottom: 1px solid #ccc;
+	border-left: 0px solid #2790B0;
+	border-right: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+
+	
+	min-height: 20px;
+	
+}
+
+.mainImage {
+	border:solid 3px #f7941e;
+}
+.navbar {
+margin-bottom:0px;
+
+}
+.footer_menu {
+    float:right;
+    padding: 9px 0px 5px;
+    height:24px;
+    
+   
+}
+.footer_menu li {
+    display:inline;
+    padding-left:5px;
+}
+
+.footer_menu a {
+    text-decoration:none;
+    color: #ffffff; 
 }

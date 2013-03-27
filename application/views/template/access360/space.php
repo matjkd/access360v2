@@ -46,20 +46,26 @@
 	}
 </style>
 
-<div id="spaceport">
+<div id="spaceport" class="">
 	<!-- Seven image layers, each layer slightly bigger than the one behind, making
 	'closer' layers move faster. -->
-	<div class="parallax-layer"  style="width:94%; height:94%;">
-		<div class="planet"style="position:absolute; left:550px; top:70px;  width:50px; height: 50px;"><img src="<?=base_url() ?>images/space/planet01.png"/>
-		</div>
-	</div>
-
-	<div class="parallax-layer"  style="width:98%; height:98%;">
-		<div class="planet" style="position:absolute; top:40px; left:190px;  width:180px; height:91px;">
+	
+	<div class="parallax-layer"  style="width:96%; height:93%;">
+		<div class="planet" style="position:absolute; top:40px; left:240px;  width:180px; height:91px;">
 <img style="position:absolute"  src="<?=base_url() ?>images/space/saturn.png"/>
 			<img class="target" src="<?=base_url() ?>images/space/saturnOverlay.png"/>
 			<div class="target_text" style=" top:-20px; left:-30px;">
 				POINT OF SALE
+			</div>
+		</div>
+	</div>
+	<div class="parallax-layer"  style="width:93%; height:91%;">
+		<div class="planet"style="position:absolute; left:600px; top:50px;  width:100px; height: 100px;">
+
+			<img style="position:absolute" src="<?=base_url() ?>images/space/planet01.png"/>
+			<img class="target" src="<?=base_url() ?>images/space/planet01overlay.png"/>
+			<div class="target_text" style=" top:-20px; left:70px;">
+				SIGNAGE
 			</div>
 		</div>
 	</div>
@@ -71,7 +77,7 @@
 		</div>
 	</div>
 
-<div class="parallax-layer"  style="width:102%; height:102%;">
+<div class="parallax-layer"  style="width:102%; height:107%;">
 		<div class="planet" style="position:absolute; left:90px; top:130px;  width:110px; height: 110px;">
 			<img style="position:absolute"  src="<?=base_url() ?>images/space/planet03.png"/>
 			<img class="target" src="<?=base_url() ?>images/space/planet03outline.png"/>
@@ -81,18 +87,9 @@
 		</div>
 	</div>
 
-	<div class="parallax-layer"  style="width:102%; height:102%;">
-		<div class="planet"style="position:absolute; left:750px; top:130px;  width:100px; height: 100px;">
+	
 
-			<img style="position:absolute" src="<?=base_url() ?>images/space/planet01.png"/>
-			<img class="target" src="<?=base_url() ?>images/space/planet01overlay.png"/>
-			<div class="target_text" style=" top:-20px; left:70px;">
-				SIGNAGE
-			</div>
-		</div>
-	</div>
-
-	<div class="parallax-layer"  style="width:105%; height:105%;">
+	<div class="parallax-layer"  style="width:105%; height:115%;">
 		<div class="planet" style="position:absolute; left:250px; top:250px;  width:90px; height: 90px;">
 			<img style="position:absolute"  src="<?=base_url() ?>images/space/planet02.png"/>
 			<img class="target" src="<?=base_url() ?>images/space/planet02outline.png"/>
@@ -102,8 +99,8 @@
 		</div>
 	</div>
 
-	<div class="parallax-layer"  style="width:109%; height:109%;">
-		<div class="planet" style="position:absolute; left:630px; top:190px;  width:150px; height: 150px;">
+	<div class="parallax-layer"  style="width:115%; height:119%;">
+		<div class="planet" style="position:absolute; left:690px; top:190px;  width:150px; height: 150px;">
 			<img style="position:absolute" src="<?=base_url() ?>images/space/earth.png"/>
 			<img class="target"  src="<?=base_url() ?>images/space/earthoutline.png"/>
 			<div class="target_text" style=" top:150px; left:-30px;">

@@ -11,12 +11,14 @@
     <!-- CSS -->
   	<!-- CSS -->
 		<link href="<?=base_url() ?>css/bootstrap.css" rel="stylesheet">
+		<link href="<?=base_url() ?>css/font-awesome.css" rel="stylesheet">
+		<link href="<?=base_url() ?>css/animate.css" rel="stylesheet">
 		<link href=".<?=base_url() ?>css/bootstrap-responsive.css" rel="stylesheet">
 	
 		<link href="<?=base_url() ?>css/<?=$this -> config_theme ?>/speed-use.css" rel="stylesheet">
 		
 		<link href="<?=base_url() ?>css/<?=$this -> config_theme ?>/styles.css" rel="stylesheet">
-
+		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,900,200italic' rel='stylesheet' type='text/css'>
 		<script type="text/javascript" src="//use.typekit.net/tfb0iji.js"></script>
 		<script type="text/javascript">
 			try {
@@ -45,7 +47,7 @@
     	
       <div class="navbar-access">
         <div class="container">
-        	 <div class="logo" ><img src="<?=base_url()?>css/access360/images/logoBig.png"/></div>
+        	 <div class="logo animated fadeInDown" ><img src="<?=base_url()?>css/access360/images/logoBig.png"/></div>
           <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -68,7 +70,7 @@
     <div class="container">
 
       <!-- Main hero unit for a primary marketing message or call to action -->
-     <?=$this->load->view('template/access360/space')?>
+     <?=$this->load->view($mainpage)?>
    
     
 
