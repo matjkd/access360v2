@@ -82,5 +82,37 @@ $(document).ready(function() {
 
  $('.img_thumb').tooltip();
 	sunglow();
+	
+	
+    $("a[rel^='prettyPhoto']").prettyPhoto();
+    
+     $(function () {
+        $('body').popover({
+            selector: '[data-toggle="popover"]',
+            trigger: 'hover'
+        });
+
+        $('body').tooltip({
+            selector: 'a[rel="tooltip"], [data-toggle="tooltip"]'
+        });
+    });
+
 
 });
+
+ 
+/*================================================================*/
+/*	superfish menu
+/*================================================================*/
+    jQuery('#navcontainer > ul').superfish({ 
+        delay:       0,
+        animation:   {
+            opacity:'show',
+            height:'show'
+        },
+        speed:       'fast',
+        autoArrows:  false
+    });
+    
+
+

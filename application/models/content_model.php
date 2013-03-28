@@ -156,7 +156,12 @@ class Content_model extends CI_Model {
     }
 	
 	function get_portfolio($type = NULL) {
+		
+		if($type != '') {
+			$this->db->where('page', $type);
+		} 
 		$query = $this->db->get('portfolio');
+		
     	if ($query->num_rows > 0) {
     		return $query->result();
     	}

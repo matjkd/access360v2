@@ -42,7 +42,7 @@ class Welcome extends MY_Controller {
 	}
 
 	function get_content_data($menu) {
-		$data['portfolio'] = $this->content_model->get_portfolio();
+		
 		$data['content'] = $this->content_model->get_content($menu);
 		$data['case_studies'] = $this->content_model->get_case_studies();
 		$data['latest'] = $this->content_model->get_gallery('latestwork', 4);
@@ -51,6 +51,7 @@ class Welcome extends MY_Controller {
 		 
 		$data['title'] = $row->title;
 		$data['sidebox'] = $row->sidebox;
+		$data['content_text'] = $row->content;
 		$data['sidebox_pos'] = $row->sidebox_pos;
 		$data['metatitle'] = $row->meta_title;
 		$data['slideshow_active'] = $row->slideshow;
@@ -60,8 +61,10 @@ class Welcome extends MY_Controller {
 		$data['content_id'] = $row->content_id;
 		$data['hide_top'] = $row->hide_top;
 		$data['titleImage'] = $row->titleImage;
+		$data['gallery'] = $row->gallery;
 		endforeach;
 
+		$data['portfolio'] = $this->content_model->get_portfolio($data['gallery']);
 		$data['attachments'] = $this->content_model->get_attachments($data['content_id']);
 		$this->load->vars($data);
 		return $data;

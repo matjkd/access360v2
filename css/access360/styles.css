@@ -1,14 +1,20 @@
 body {
-
+	font-family: 'Source Sans Pro', sans-serif;
 	padding-bottom: 0px;
-	
 }
 
 h1, h2, h3, h4 {
 	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: 200;
 }
-
+h3 {
+	line-height: 20px;
+}
+h1 {
+	margin-bottom: 20px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #ddd;
+}
 .bodycontain {
 	background: url('images/galaxy.jpg');
 	background-size: cover;
@@ -42,20 +48,49 @@ footer {
 	border-bottom: #f7941e solid 3px;
 }
 
+#navcontainer {
+
+}
 #navcontainer ul {
-	margin: 0;
+	position: relative;
+	margin: 0 0 5px 0;
 	padding: 0;
 	list-style-type: none;
 	text-align: center;
 }
 
-#navcontainer ul li {
+#navcontainer > ul > li {
 	display: inline;
+	position: relative;
+}
+
+#navcontainer ul ul {
+	width: 120px;
+	position: absolute;
+	background-color: #ffffff;
+	z-index: 9999999;
+	text-align:left;
+	padding-top:10px;
+	border-bottom:3px solid #f7941e;
+}
+#navcontainer ul ul li {
+	border-bottom: 1px solid #eeeeee;
+	border-top: 0px solid #eeeeee;
+	list-style: none;
+	position: relative;
+	padding:5px 10px;
+}
+#navcontainer ul ul li a {
+	padding:0;
 }
 
 #navcontainer ul li a {
+	transition: All 1s ease;
+	-webkit-transition: All 1s ease;
+	-moz-transition: All 1s ease;
+	-o-transition: All 1s ease;
 	text-decoration: none;
-	padding: .2em 1em;
+	padding: 2em 1em;
 	color: #555;
 }
 
@@ -65,39 +100,48 @@ footer {
 
 .mainbody {
 
-	margin-bottom:0px;
-	margin-top:0px;
-	background-color: rgba(255, 255, 255, 0.85);
+	margin-bottom: 0px;
+	margin-top: 0px;
+	background-color: rgba(255, 255, 255, 1);
 	border-bottom: 1px solid #ccc;
 	border-left: 0px solid #2790B0;
 	border-right: 1px solid #ccc;
 	border-top: 1px solid #ccc;
-
-	
+	margin-bottom: 20px;
 	min-height: 20px;
-	
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
 }
 
 .mainImage {
-	border:solid 3px #f7941e;
+	border: solid 2px #f7941e;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
 }
-.navbar {
-margin-bottom:0px;
 
-}
 .footer_menu {
-    float:right;
-    padding: 9px 0px 5px;
-    height:24px;
-    
-   
+	float: right;
+	padding: 9px 0px 5px;
+	height: 24px;
 }
 .footer_menu li {
-    display:inline;
-    padding-left:5px;
+	display: inline;
+	padding-left: 5px;
 }
 
 .footer_menu a {
-    text-decoration:none;
-    color: #ffffff; 
+	text-decoration: none;
+	color: #444;
+}
+.social_links i {
+	margin-right: 5px;
+	transition: All 1s ease;
+	-webkit-transition: All 1s ease;
+	-moz-transition: All 1s ease;
+	-o-transition: All 1s ease;
+}
+.social_links i:hover {
+	color: #FBB450;
 }

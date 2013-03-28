@@ -98,7 +98,7 @@
 ?>
 		<?php if($row->portfolio_pdf != NULL) {?>
 		<li>
-			<a class="img_thumb thumb spark"  data-original-title="<?=$row -> portfolio_title ?>" target="_blank" id="loadPeugeot"
+			<a class="img_thumb thumb spark"  data-original-title="<?=$row -> portfolio_title ?>" target="_blank" id=""
 				 href="https://s3-eu-west-1.amazonaws.com/access360site/<?=$row -> page ?>/<?=$row -> portfolio_pdf ?>"
 				  style="background: url('https://s3-eu-west-1.amazonaws.com/access360site/<?=$row -> page ?>/<?=$row -> portfolio_thumb ?>'); background-size: cover; ">
 			<div class="hoverbox">
@@ -110,8 +110,8 @@
 		
 		<?php if($row->portfolio_pdf == NULL) {?>
 		<li>
-			<a class="img_thumb thumb spark"  data-original-title="<?=$row -> portfolio_title ?>" target="_blank" id="loadPeugeot"
-				 href="https://s3-eu-west-1.amazonaws.com/access360site/<?=$row -> page ?>/<?=$row -> portfolio_pdf ?>" 
+			<a class="img_thumb thumb spark" rel="prettyPhoto[<?=$row -> page ?>]" data-original-title="<?=$row -> portfolio_title ?>" target="_blank" id=""
+				 href="https://s3-eu-west-1.amazonaws.com/access360site/<?=$row -> page ?>/<?=$row -> portfolio_image01 ?>" 
 				 style="background: url('https://s3-eu-west-1.amazonaws.com/access360site/<?=$row -> page ?>/<?=$row -> portfolio_thumb ?>'); background-size: cover; ">
 			<div class="hoverbox">
 				<i class="icon-2x icon-fullscreen"></i>
@@ -124,15 +124,18 @@
 	</ul>
 
 </div>
+<span class="social_links animated fadeInLeft">
+<a href=""><i class="icon-2x icon-twitter-sign"></i></a> <a href=""><i class="icon-2x icon-facebook-sign"></i></a>
+</span>
 <ul class="footer_menu animated fadeInLeftBig">
 	<li>
-		Contact
+		<a href="">Contact</a>
 	</li>
 	<li>
-		Terms &amp; Conditions
+		<a href="">Terms &amp; Conditions</a>
 	</li>
 	<li>
-		<i class="icon-2x icon-twitter-sign"></i><i class="icon-2x icon-facebook-sign"></i>
+		
 	</li>
 	
 </ul>
