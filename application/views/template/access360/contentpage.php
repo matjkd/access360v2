@@ -1,5 +1,5 @@
 <div class=" mainbody">
-	<div class="row">
+	<div class="row-fluid">
 		<div class="span6">
 			<div class="padL20 padR10 padT20 padB20 ">
 				
@@ -8,13 +8,12 @@
 			</div>
 		</div>
 		<div class="span6">
-			<div class=" padL30 padR5 padT20 padB20">
-				<img class="mainImage animated fadeIn" src="https://s3-eu-west-1.amazonaws.com/access360site/exhibitions/peugeot.jpg"/>
-				<div class="row-fluid padT5">
-					<div class="span6"><img class="mainImage animated fadeIn" src="https://s3-eu-west-1.amazonaws.com/access360site/exhibitions/peugeot.jpg"/></div>
-					<div class="span6"><img class="mainImage animated fadeIn" src="https://s3-eu-west-1.amazonaws.com/access360site/exhibitions/peugeot.jpg"/></div>
-				</div>
-			</div>
+			<?php if(!isset($extra) || $extra == NULL) { ?>
+			<?=$this->load->view('template/access360/content_images')?>
+			<?php } else { ?>
+				<?=$this->load->view('extra/'.$extra)?>
+				
+				<?php } ?>
 		</div>
 	</div>
 	
@@ -44,17 +43,20 @@
 					Enter Your details
 				</p>
 
+	<form id="callback-form" action="<?=base_url()?>email/callback" method="post" accept-charset="utf-8">				
+					
+	<?= form_open('email/callback'); ?>
 				<div class="input-prepend">
 					<span class="add-on"><i class="icon-user"></i></span>
-					<input class="span8" id="prependedInput" type="text" placeholder="Name">
+					<input class="span8" id="formname" type="text" name="name" placeholder="Name">
 				</div>
 				<div class="input-prepend">
 					<span class="add-on"><i class="icon-phone"></i></span>
-					<input class="span8" id="prependedInput" type="text" placeholder="Phone Number">
+					<input class="span8" id="formphone" type="text" name="phone" placeholder="Phone Number">
 				</div>
 				<div class="input-prepend">
 					<span class="add-on"><i class="icon-envelope"></i></span>
-					<input class="span8" id="prependedInput" type="text" placeholder="Email">
+					<input class="span8" id="formemail" type="text" name="email" placeholder="Email">
 				</div>
 
 			</div>
@@ -79,8 +81,9 @@ Essex CM3 8RD<br/>
 		<button class="btn" data-dismiss="modal" aria-hidden="true">
 			Close
 		</button>
-		<button class="btn btn-primary">
+		<button class="btn btn-primary" type="submit">
 			Send Request
 		</button>
+	</form>
 	</div>
 </div>

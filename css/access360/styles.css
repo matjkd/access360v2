@@ -49,7 +49,7 @@ footer {
 }
 
 #navcontainer {
-
+z-index: 6;
 }
 #navcontainer ul {
 	position: relative;
@@ -68,7 +68,7 @@ footer {
 	width: 120px;
 	position: absolute;
 	background-color: #ffffff;
-	z-index: 9999999;
+	z-index: 5;
 	text-align:left;
 	padding-top:10px;
 	border-bottom:3px solid #f7941e;
@@ -90,7 +90,7 @@ footer {
 	-moz-transition: All 1s ease;
 	-o-transition: All 1s ease;
 	text-decoration: none;
-	padding: 2em 1em;
+	padding: 10px 1em;
 	color: #555;
 }
 
@@ -119,6 +119,23 @@ footer {
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
+}
+
+.bigButton {
+	padding-right:6px;
+	background:#f99605;
+	
+	
+}
+.bigButton img {
+	border:solid 3px #f99605;
+	-webkit-transition: All 0.5s ease;
+	-moz-transition: All 0.5s ease;
+	-o-transition: All 0.5s ease;
+}
+
+.bigButton img:hover {
+	opacity:0.5;
 }
 
 .footer_menu {

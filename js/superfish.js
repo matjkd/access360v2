@@ -89,7 +89,7 @@
 						follow = ($a.data('follow') === false) ? false : true;
 
 				if ( $submenu.length && (o.useClick || !follow) ){
-					e.preventDefault();
+					//e.preventDefault();
 					if ($submenu.is(':hidden')){
 						$.proxy(over,$a.parent('li'))();
 					} else if (o.useClick && follow) {

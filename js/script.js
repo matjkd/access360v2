@@ -98,7 +98,22 @@ $(document).ready(function() {
     });
 
 
+
+
 });
+
+/*
+ * Thumbs
+ */
+							$(document).ready(function() {
+								$('#our-projects').elastislide({
+									imageW : 132,
+									border : 0,
+									minItems : 6,
+									margin : 10
+								});
+							});
+						
 
  
 /*================================================================*/
@@ -114,5 +129,88 @@ $(document).ready(function() {
         autoArrows:  false
     });
     
+    
+/*==================================================================*/
+/* 
+ *  form validation
+ *  
+ *==================================================================*/
+  
+$(document).ready(function() {
+    $('#formemail').tooltip( {
+        title: 'Invalid email address',
+        placement: 'right',
+        trigger: 'manual'
+    });
+    
+     $('#formphone').tooltip( {
+        title: 'Invalid phone number',
+        placement: 'right',
+        trigger: 'manual'
+    });
+
+    $('#formname').tooltip( {
+        title: 'You must enter your name',
+        placement: 'right',
+        trigger: 'manual'
+    });
+
+    $('#callback-form').submit( function() {
+        var validForm = true;
+        // validate email
+        if( validateEmail( $('#formemail').val() ) == false ) {
+            $('#formemail').tooltip('show');
+            validForm = false;
+        }
+        else {
+            $('#formemail').tooltip('hide');
+        }
+        
+        
+         // validate phone
+        if( validatePhone( $('#formphone').val() ) == false ) {
+            $('#formphone').tooltip('show');
+            validForm = false;
+        }
+        else {
+            $('#formphone').tooltip('hide');
+        }
+        
+        // validate name
+        if( validateName( $('#formname').val() ) == false ) {
+         	$('#formname').tooltip('show');
+            validForm = false;	
+         } else {
+            $('#formname').tooltip('hide');
+        }
+       
+        
+        if( validForm ) {
+            message( 'error', 'Ooops', "Access Denied", 3000 );
+        }
+        return false;
+    });
+});
+
+function validateEmail(email) {
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+}
+
+function validateName(name) {
+     var re = /[A-Za-z0-9]{2,40}/;
+    return re.test(name);
+    
+        
+      
+    }
+    
+    function validatePhone(phone) {
+     var re = /[A-Za-z0-9]{2,40}/;
+    return re.test(phone);
+    
+        
+      
+    }
 
 

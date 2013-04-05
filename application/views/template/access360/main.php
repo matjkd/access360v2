@@ -17,10 +17,14 @@
 		<link href="<?=base_url() ?>css/prettyphoto.css" rel="stylesheet">
 
 		<link href="<?=base_url() ?>css/<?=$this -> config_theme ?>/speed-use.css" rel="stylesheet">
+		
+		
 
 		<link href="<?=base_url() ?>css/<?=$this -> config_theme ?>/styles.css" rel="stylesheet">
 		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,900,200italic' rel='stylesheet' type='text/css'>
 		<script type="text/javascript" src="//use.typekit.net/tfb0iji.js"></script>
+		<script src="<?=base_url()?>js/modernizr.custom.17475.js"></script>
+
 		<script type="text/javascript">
 			try {
 				Typekit.load();
@@ -52,51 +56,50 @@
 							<a href="<?=base_url() ?>"><img src="<?=base_url() ?>css/access360/images/logoBig.png"/></a>
 						</div>
 						<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
-						
-							
-								<div id="navcontainer">
+
+						<div id="navcontainer">
+							<ul>
+								<li>
+									<a href="<?=base_url() ?>">Home</a>
+								</li>
+
+								<li>
+									<a href="<?=base_url() ?>about">About us</a>
+								</li>
+								<li>
+									<a href="<?=base_url() ?>signage">Signage</a>
+								</li>
+								<li>
+									<a href="<?=base_url() ?>experiential">Experiential</a>
+								</li>
+								<li>
+									<a href="<?=base_url() ?>exhibitions">Exhibitions</a>
 									<ul>
 										<li>
-											<a href="<?=base_url() ?>">Home</a>
-										</li>
-
-										<li>
-											<a href="<?=base_url() ?>about">About us</a>
+											<a href="<?=base_url() ?>custom">Custom Build</a>
 										</li>
 										<li>
-											<a href="<?=base_url() ?>signage">Signage</a>
+											<a href="<?=base_url() ?>modular">Modular</a>
 										</li>
 										<li>
-											<a href="<?=base_url() ?>experiential">Experiential</a>
+											<a href="<?=base_url() ?>outdoor">Outdoor</a>
 										</li>
 										<li>
-											<a href="<?=base_url() ?>exhibitions">Exhibitions</a>
-											<ul>
-												<li>
-													<a href="<?=base_url() ?>custom">Custom Build</a>
-												</li>
-												<li>
-													<a href="<?=base_url() ?>modular">Modular</a>
-												</li>
-												<li>
-													<a href="<?=base_url() ?>outdoor">Outdoor</a>
-												</li>
-												<li>
-													<a href="<?=base_url() ?>roadshow">Roadshow</a>
-												</li>
-											</ul>
-										</li>
-										<li>
-											<a href="<?=base_url() ?>digitalsignage">Digital Signage</a>
-										</li>
-										<li>
-											<a href="<?=base_url() ?>pos">Point of Sale</a>
+											<a href="<?=base_url() ?>roadshow">Roadshow</a>
 										</li>
 									</ul>
-								</div>
-							
+								</li>
+								<li>
+									<a href="<?=base_url() ?>digitalsignage">Digital Signage</a>
+								</li>
+								<li>
+									<a href="<?=base_url() ?>pos">Point of Sale</a>
+								</li>
+							</ul>
 						</div>
-					
+
+					</div>
+
 				</div>
 			</div>
 
@@ -123,6 +126,7 @@
 		<script src="<?=base_url() ?>js/jquery.prettyPhoto.js"></script>
 		<script src="<?=base_url() ?>js/plugins.js"></script>
 		<script src="<?=base_url() ?>js/superfish.js"></script>
+		<script src="<?=base_url() ?>js/elastislide.js"></script>
 		<script src="<?=base_url() ?>js/parallax.js"></script>
 		<script src="<?=base_url() ?>js/script.js?2"></script>
 

@@ -62,6 +62,7 @@ class Welcome extends MY_Controller {
 		$data['hide_top'] = $row->hide_top;
 		$data['titleImage'] = $row->titleImage;
 		$data['gallery'] = $row->gallery;
+		$data['extra'] = $row->extra;
 		endforeach;
 
 		$data['portfolio'] = $this->content_model->get_portfolio($data['gallery']);
