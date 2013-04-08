@@ -47,13 +47,11 @@
 		padding-top: 120px;
 		width: 132px;
 		z-index: 2000;
+		border-left: 1px #fff solid;
 		-webkit-background-size: cover;
 		-moz-background-size: cover;
 		-o-background-size: cover;
 		background-size: cover;
-		-webkit-box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
-		-moz-box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
-		box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
 	}
 
 	.hoverbox {
@@ -112,11 +110,20 @@
 		top: 10px;
 		left: -63px;
 	}
+	.btleft .es-nav2 {
+		position: absolute;
+		top: 10px;
+		left: -63px;
+	}
 	.bttop .es-nav {
 		position: absolute;
 		top: 62px;
 		right: 0;
-		width:100%;
+	}
+	.bttop .es-nav2 {
+		position: absolute;
+		top: 62px;
+		left: 0;
 	}
 	.es-nav span {
 		float: left;
@@ -124,24 +131,43 @@
 		top: 3px;
 		right: 0;
 		text-indent: 4px;
-		color:#fff;
+		color: #fff;
 		cursor: pointer;
 		width: 26px;
 		height: 21px;
-		padding-top:5px;
+		padding-top: 5px;
 	}
-	.es-nav .es-nav-prev {
+	
+	.es-nav2 span {
+		float: left;
+		display: block;
+		top: 3px;
+		right: 0;
+		text-indent: 4px;
+		color: #fff;
+		cursor: pointer;
+		width: 26px;
+		height: 21px;
+		padding-top: 5px;
+	}
+	.es-nav2 .es-nav-prev {
 		background: rgba(232, 72, 7, 0.7);
+		float:left;
 	}
 	.es-nav .es-nav-next {
-		
+
 		background-color: rgba(232, 72, 7, 0.7);
 		margin-left: 5px;
-		float:right;
+		float: left;
 	}
 	.es-nav .es-nav-next:hover, .es-nav .es-nav-prev:hover {
 		background-color: rgba(232, 72, 7, 1);
 	}
+	
+	.es-nav2 .es-nav-next:hover, .es-nav2 .es-nav-prev:hover {
+		background-color: rgba(232, 72, 7, 1);
+	}
+
 
 	.carousel-control {
 		border: none;
@@ -173,7 +199,7 @@
 	.portfolio {
 	}
 	.portfolio article {
-		background: none repeat scroll 0 0 #383838;
+		background: none repeat scroll 0 0 #ffffff;
 		margin-top: 10px;
 		overflow: hidden;
 		position: relative;
@@ -188,7 +214,7 @@
 		color: #FFFFFF;
 	}
 	.portfolio article:hover {
-		background: #565656 !important;
+		background: #ffffff !important;
 		color: #C3C0B9 !important;
 	}
 	.portfolio article .title {
@@ -337,16 +363,16 @@
 
 				<?php endforeach; ?>
 			</ul>
-<?php if($x < 7){?>
-	<style>
-		.es-nav {
-			display:none;
-		}
-	</style>
-<?php } ?>
+			<?php if($x < 7){?>
+			<style>
+				.es-nav {
+					display: none;
+				}
+			</style>
+			<?php } ?>
 		</div>
-
 		
+
 	</div>
 </div>
 

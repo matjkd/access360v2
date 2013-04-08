@@ -202,7 +202,8 @@
 
 			this.$navNext = $('<span class="es-nav-next"><i class="icon-arrow-right"></i></span>');
 			this.$navPrev = $('<span class="es-nav-prev"><i class="icon-arrow-left"></i></span>');
-			$('<div class="es-nav"/>').append(this.$navPrev).append(this.$navNext).appendTo(this.$el);
+			$('<div class="es-nav2"/>').append(this.$navPrev).appendTo(this.$el);
+			$('<div class="es-nav"/>').append(this.$navNext).appendTo(this.$el);
 
 			//this._toggleControls();
 
