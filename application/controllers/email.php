@@ -86,7 +86,7 @@
 
 				$subject = "Call Back Request";
 				$message = "Call back request from " . $name . ", on " . $phone . ". email: " . $email;
-				$to = "mat@redstudio.co.uk";
+				$to = "mat@redstudio.co.uk, dave@access360.co.uk, clare@access360.co.uk, elizabeth@access360.co.uk";
 				$this -> send_email($subject, $message, $to);
 				
 				$this -> session -> set_flashdata('message', 'Thank you, expect a call from us shortly  :-)');
