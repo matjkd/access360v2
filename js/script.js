@@ -34,6 +34,15 @@ function sunglow() {
 
 
 $(document).ready(function() {
+	
+	
+	
+	//tabs
+	$('#myTab a').click(function (e) {
+  e.preventDefault();
+  $(this).tab('show');
+})
+
 
 	// Declare parallax on layers
 	$('.parallax-layer').parallax({

@@ -8,7 +8,7 @@
 		<meta name="description" content="">
 		<meta name="author" content="">
 
-		<!-- CSS -->
+		
 		<!-- CSS -->
 		<link href="<?=base_url() ?>css/bootstrap.css" rel="stylesheet">
 		<link href=".<?=base_url() ?>css/bootstrap-responsive.css" rel="stylesheet">
@@ -66,9 +66,7 @@
 								<li>
 									<a href="<?=base_url() ?>about">About us</a>
 								</li>
-								<li>
-									<a href="<?=base_url() ?>signage">Signage</a>
-								</li>
+								
 								<li>
 									<a href="<?=base_url() ?>experiential">Experiential</a>
 								</li>
@@ -93,7 +91,18 @@
 									<a href="<?=base_url() ?>digitalsignage">Digital Signage</a>
 								</li>
 								<li>
+									<a href="<?=base_url() ?>signage">Signage</a>
+								</li>
+								<li>
 									<a href="<?=base_url() ?>pos">Point of Sale</a>
+								</li>
+								
+								<li>
+									<a href="<?=base_url() ?>casestudies">Case Studies</a>
+								</li>
+								
+								<li>
+									<a href="<?=base_url() ?>contact">Contact</a>
 								</li>
 							</ul>
 						</div>
@@ -104,6 +113,8 @@
 			</div>
 
 			<div class="container">
+				
+				<?=$this -> load -> view('template/access360/alert') ?>
 
 				<!-- Main hero unit for a primary marketing message or call to action -->
 				<?=$this -> load -> view($mainpage) ?>

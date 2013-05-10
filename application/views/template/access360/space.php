@@ -54,7 +54,7 @@
 		<a href="<?=base_url() ?>pos">
 		<div class="planet" style="position:absolute; top:40px; left:240px;  width:180px; height:91px;">
 			<img style="position:absolute"  src="<?=base_url() ?>images/space/saturn.png"/>
-			<img class="target" src="<?=base_url() ?>images/space/saturnOverlay.png"/>
+			<img class="target" src="<?=base_url() ?>images/space/saturnOverlayGlow.png"/>
 			<div class="target_text" style=" top:-20px; left:-30px;">
 				POINT OF SALE
 			</div>
@@ -65,7 +65,7 @@
 		<div class="planet"style="position:absolute; left:600px; top:50px;  width:100px; height: 100px;">
 
 			<img style="position:absolute" src="<?=base_url() ?>images/space/planet01.png"/>
-			<img class="target" src="<?=base_url() ?>images/space/planet01overlay.png"/>
+			<img class="target" src="<?=base_url() ?>images/space/planet01overlayGlow.png"/>
 			<div class="target_text" style=" top:-20px; left:70px;">
 				SIGNAGE
 			</div>
@@ -83,7 +83,7 @@
 		<a href="<?=base_url() ?>digitalsignage">
 		<div class="planet" style="position:absolute; left:90px; top:130px;  width:110px; height: 110px;">
 			<img style="position:absolute"  src="<?=base_url() ?>images/space/planet03.png"/>
-			<img class="target" src="<?=base_url() ?>images/space/planet03outline.png"/>
+			<img class="target" src="<?=base_url() ?>images/space/planet03outlineGlow.png"/>
 			<div class="target_text" style=" top:-20px; left:-30px;">
 				DIGITAL SIGNAGE
 			</div>
@@ -94,7 +94,7 @@
 		<a href="<?=base_url() ?>experiential">
 		<div class="planet" style="position:absolute; left:250px; top:250px;  width:90px; height: 90px;">
 			<img style="position:absolute"  src="<?=base_url() ?>images/space/planet02.png"/>
-			<img class="target" src="<?=base_url() ?>images/space/planet02outline.png"/>
+			<img class="target" src="<?=base_url() ?>images/space/planet02outlineGlow.png"/>
 			<div class="target_text" style=" top:90px; left:30px;">
 				EXPERIENTIAL
 			</div>
@@ -105,7 +105,7 @@
 		<a href="<?=base_url() ?>exhibitions">
 		<div class="planet" style="position:absolute; left:690px; top:190px;  width:150px; height: 150px;">
 			<img style="position:absolute" src="<?=base_url() ?>images/space/earth.png"/>
-			<img class="target"  src="<?=base_url() ?>images/space/earthoutline.png"/>
+			<img class="target"  src="<?=base_url() ?>images/space/earthoutlineGlow.png"/>
 			<div class="target_text" style=" top:150px; left:-30px;">
 				EXHIBITIONS
 			</div>

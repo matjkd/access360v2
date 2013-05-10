@@ -137,7 +137,7 @@
 		height: 21px;
 		padding-top: 5px;
 	}
-	
+
 	.es-nav2 span {
 		float: left;
 		display: block;
@@ -152,7 +152,7 @@
 	}
 	.es-nav2 .es-nav-prev {
 		background: rgba(232, 72, 7, 0.7);
-		float:left;
+		float: left;
 	}
 	.es-nav .es-nav-next {
 
@@ -163,11 +163,10 @@
 	.es-nav .es-nav-next:hover, .es-nav .es-nav-prev:hover {
 		background-color: rgba(232, 72, 7, 1);
 	}
-	
+
 	.es-nav2 .es-nav-next:hover, .es-nav2 .es-nav-prev:hover {
 		background-color: rgba(232, 72, 7, 1);
 	}
-
 
 	.carousel-control {
 		border: none;
@@ -322,31 +321,18 @@
 	}
 
 </style>
-
+<?php if($portfolio != "" && $hidegallery != 1) { ?>
 <div class="row-fluid">
 	<div id="our-projects" class="carousel bttop">
 		<div class="carousel-wrapper">
 			<ul class="portfolio">
 
 				<?php $x=0; foreach($portfolio as $row):
-				$x = $x + 1;
+$x = $x + 1;
 				?>
-				<?php if($row->portfolio_pdf != NULL) {?>
-				<li>
 
-					<article>
-						<a class="img_thumb thumb spark"  data-original-title="<?=$row -> portfolio_title ?>" target="_blank" id=""
-						href="https://s3-eu-west-1.amazonaws.com/access360site/<?=$row -> page ?>/<?=$row -> portfolio_pdf ?>"
-						style="background: url('https://s3-eu-west-1.amazonaws.com/access360site/<?=$row -> page ?>/<?=$row -> portfolio_thumb ?>'); background-size: cover; ">
-						<div class="hoverbox">
-							<i class="icon-2x icon-download"></i>
-						</div></a>
-					</article>
-
-				</li>
-				<? } ?>
-
-				<?php if($row->portfolio_pdf == NULL) {?>
+				<?php if($row->portfolio_pdf == NULL) {
+				?>
 				<li>
 
 					<article>
@@ -363,7 +349,8 @@
 
 				<?php endforeach; ?>
 			</ul>
-			<?php if($x < 7){?>
+			<?php if($x < 7){
+			?>
 			<style>
 				.es-nav {
 					display: none;
@@ -371,22 +358,27 @@
 			</style>
 			<?php } ?>
 		</div>
-		
 
 	</div>
 </div>
-
-<span class="social_links animated fadeInLeft"> <a href=""> <i class="icon-2x icon-twitter-sign"></i></a> <a href=""> <i class="icon-2x icon-facebook-sign"></i></a> </span>
+<?php } ?>
+<div style="margin-top:10px;">
+<span class="social_links animated fadeInLeft"> 
+	<a target="_blank" href="https://twitter.com/access_360"> <i class="icon-2x icon-twitter-sign"></i></a> 
+	<a target="_blank" href="http://www.facebook.com/pages/Access360/250361334977191"> <i class="icon-2x icon-facebook-sign"></i></a> 
+	<a target="_blank" href="mailto:sales@access360.co.uk"> <i class="icon-2x icon-envelope-alt"></i></a> 
+	
+	</span>
 
 <ul class="footer_menu animated fadeInLeftBig">
+	
 	<li>
-		<a href="">Contact</a>
-	</li>
-	<li>
-		<a href="">Terms &amp; Conditions</a>
+
+		<a href="<?=base_url() ?>terms">Terms &amp; Conditions</a>
 	</li>
 	<li>
 
 	</li>
 
 </ul>
+</div>

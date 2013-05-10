@@ -11,6 +11,7 @@ h3 {
 	line-height: 20px;
 }
 h1 {
+	color:#f49131;
 	margin-bottom: 20px;
 	padding-bottom: 5px;
 	border-bottom: 1px solid #ddd;
@@ -22,6 +23,10 @@ h1 {
 footer {
 	background: #fff;
 	border-top: #f7941e solid 3px;
+}
+
+a:hover {
+	text-decoration:none;
 }
 
 [class*="span"] {
@@ -43,16 +48,25 @@ footer {
 	width: 152px;
 	height: 85px;
 }
+
+.contentlogo {
+	float:left;
+	width:50px;
+	margin-right:5px;
+	margin-bottom:5px;
+}
+
 .navbar-access {
 	background: #fff;
 	border-bottom: #f7941e solid 3px;
 }
 
 #navcontainer {
+	display:block;
 z-index: 6;
 }
 #navcontainer ul {
-	position: relative;
+	
 	margin: 0 0 5px 0;
 	padding: 0;
 	list-style-type: none;
@@ -64,7 +78,9 @@ z-index: 6;
 	position: relative;
 }
 
-#navcontainer ul ul {
+#navcontainer ul > li > ul {
+	display:none;
+	left: 0;
 	width: 120px;
 	position: absolute;
 	background-color: #ffffff;
@@ -97,6 +113,16 @@ z-index: 6;
 #navcontainer ul li a:hover {
 	color: #f7941e;
 }
+.nav-tabs > li > a {
+
+background: rgb(255, 201, 136);
+color:#333;
+}
+.nav-tabs > li > a:hover {
+
+background: #f7941e;
+color:#fff;
+}
 
 .mainbody {
 
@@ -115,10 +141,12 @@ z-index: 6;
 }
 
 .mainImage {
+	width:99%;
 	border: solid 2px #f7941e;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
+	
 }
 
 .bigButton {

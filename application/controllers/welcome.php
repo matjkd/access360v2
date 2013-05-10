@@ -20,6 +20,7 @@ class Welcome extends MY_Controller {
 		$data['portfolio'] = $this->content_model->get_portfolio();
 
 		$this->get_content_data($data['menu']);
+		
 		if ($data['menu'] == 'news') {
 			$data['news'] = $this->content_model->get_content_cat('news');
 		}
@@ -59,10 +60,26 @@ class Welcome extends MY_Controller {
 		$data['meta_description'] = $row->meta_keywords;
 		$data['slideshow'] = $row->slideshow;
 		$data['content_id'] = $row->content_id;
-		$data['hide_top'] = $row->hide_top;
+		$data['hidegallery'] = $row->hide_gallery;
 		$data['titleImage'] = $row->titleImage;
 		$data['gallery'] = $row->gallery;
 		$data['extra'] = $row->extra;
+		$data['image1'] = $row->image1;
+		$data['image2'] = $row->image2;
+		$data['image3'] = $row->image3;
+		$data['image4'] = $row->image4;
+		$data['image5'] = $row->image5;
+		
+		$data['position1'] = $row->position1;
+		$data['position2'] = $row->position2;
+		$data['position3'] = $row->position3;
+		$data['position4'] = $row->position4;
+		$data['position5'] = $row->position5;
+		
+		$data['block2'] = $row->block2;
+		$data['parent'] = $row->parent;
+		$data['customContent'] = $row->customcontent;
+		
 		endforeach;
 
 		$data['portfolio'] = $this->content_model->get_portfolio($data['gallery']);

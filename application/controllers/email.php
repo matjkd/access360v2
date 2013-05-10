@@ -88,8 +88,10 @@
 				$message = "Call back request from " . $name . ", on " . $phone . ". email: " . $email;
 				$to = "mat@redstudio.co.uk";
 				$this -> send_email($subject, $message, $to);
+				
+				$this -> session -> set_flashdata('message', 'Thank you, expect a call from us shortly  :-)');
 
-				echo "success";
+				redirect($_SERVER['HTTP_REFERER'], 'refresh');
 			}
 
 		}
