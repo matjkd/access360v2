@@ -334,7 +334,7 @@
 $x = $x + 1;
 			?>
 
-			<?php if($row->portfolio_pdf == NULL) {
+			<?php if($row->portfolio_pdf == NULL && $row->page != "digitalsignage") {
 			?>
 			<li>
 				<article>
