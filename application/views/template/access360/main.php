@@ -155,6 +155,7 @@
 		<script src="<?=base_url() ?>js/superfish.js"></script>
 		<script src="<?=base_url() ?>js/elastislide.js"></script>
 		<script src="<?=base_url() ?>js/parallax.js"></script>
+		<script src="<?=base_url() ?>js/flexslider.js"></script>
 		<script src="<?=base_url() ?>js/script.js?2"></script>
 
 	</body>

@@ -164,7 +164,7 @@
 
 		function get_case_studies()
 		{
-
+	$this->db->order_by('order');
 			$this -> db -> where('page', 'casestudies');
 			$query = $this -> db -> get('portfolio');
 			if ($query -> num_rows > 0)

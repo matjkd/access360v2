@@ -319,66 +319,57 @@
 	}
 	.ps-description {
 	}
+	
+
 
 </style>
 <?php if($portfolio != "" && $hidegallery != 1) { ?>
 <div class="row-fluid">
-	<div id="our-projects" class="carousel bttop">
-		<div class="carousel-wrapper">
-			<ul class="portfolio">
+	
 
-				<?php $x=0; foreach($portfolio as $row):
+	<!-- flexslider -->
+	<div class="flexslider">
+		<ul class="slides">
+			<?php $x=0; foreach($portfolio as $row):
 $x = $x + 1;
-				?>
-
-				<?php if($row->portfolio_pdf == NULL) {
-				?>
-				<li>
-
-					<article>
-						<a class="img_thumb thumb spark" rel="prettyPhoto[<?=$row -> page ?>]" data-original-title="<?=$row -> portfolio_title ?>" target="_blank" id=""
-						href="https://s3-eu-west-1.amazonaws.com/access360site/<?=$row -> page ?>/<?=$row -> portfolio_image01 ?>"
-						style="background: url('https://s3-eu-west-1.amazonaws.com/access360site/<?=$row -> page ?>/<?=$row -> portfolio_thumb ?>'); background-size: cover; ">
-						<div class="hoverbox">
-							<i class="icon-2x icon-fullscreen"></i>
-						</div></a>
-					</article>
-
-				</li>
-				<? } ?>
-
-				<?php endforeach; ?>
-			</ul>
-			<?php if($x < 7){
 			?>
-			<style>
-				.es-nav {
-					display: none;
-				}
-			</style>
-			<?php } ?>
-		</div>
 
+			<?php if($row->portfolio_pdf == NULL) {
+			?>
+			<li>
+				<article>
+					<a class="img_thumb thumb spark" rel="prettyPhoto[<?=$row -> page ?>]" data-original-title="<?=$row -> portfolio_title ?>" target="_blank" id=""
+					href="https://s3-eu-west-1.amazonaws.com/access360site/<?=$row -> page ?>/<?=$row -> portfolio_image01 ?>"
+					style="background: url('https://s3-eu-west-1.amazonaws.com/access360site/<?=$row -> page ?>/<?=$row -> portfolio_thumb ?>'); background-size: cover; ">
+					<div class="hoverbox">
+						<i class="icon-2x icon-fullscreen"></i>
+					</div></a>
+				</article>
+
+			</li>
+			<? } ?>
+
+			<?php endforeach; ?>
+		</ul>
+		
+		<!-- items mirrored twice, total of 12 -->
+		</ul>
 	</div>
+
 </div>
 <?php } ?>
 <div style="margin-top:10px;">
-<span class="social_links animated fadeInLeft"> 
-	<a target="_blank" href="https://twitter.com/access_360"> <i class="icon-2x icon-twitter-sign"></i></a> 
-	<a target="_blank" href="http://www.facebook.com/pages/Access360/250361334977191"> <i class="icon-2x icon-facebook-sign"></i></a> 
-	<a target="_blank" href="mailto:sales@access360.co.uk"> <i class="icon-2x icon-envelope-alt"></i></a> 
-	
-	</span>
+	<span class="social_links animated fadeInLeft"> <a target="_blank" href="https://twitter.com/access_360"> <i class="icon-2x icon-twitter-sign"></i></a> <a target="_blank" href="http://www.facebook.com/pages/Access360/250361334977191"> <i class="icon-2x icon-facebook-sign"></i></a> <a target="_blank" href="mailto:sales@access360.co.uk"> <i class="icon-2x icon-envelope-alt"></i></a> </span>
 
-<ul class="footer_menu animated fadeInLeftBig">
-	
-	<li>
+	<ul class="footer_menu animated fadeInLeftBig">
 
-		<a href="<?=base_url() ?>terms">Terms &amp; Conditions</a>
-	</li>
-	<li>
+		<li>
 
-	</li>
+			<a href="<?=base_url() ?>terms">Terms &amp; Conditions</a>
+		</li>
+		<li>
 
-</ul>
+		</li>
+
+	</ul>
 </div>
