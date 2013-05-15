@@ -150,13 +150,14 @@ color:#fff;
 }
 
 .bigButton {
+	margin-top:40px;
 	padding-right:6px;
-	background:#f99605;
+	text-align:center;
 	
 	
 }
 .bigButton img {
-	border:solid 3px #f99605;
+	border:solid 0px #f99605;
 	-webkit-transition: All 0.5s ease;
 	-moz-transition: All 0.5s ease;
 	-o-transition: All 0.5s ease;
@@ -164,6 +165,10 @@ color:#fff;
 
 .bigButton img:hover {
 	opacity:0.5;
+}
+
+.bigButton a {
+	color:#f7941e;
 }
 
 .footer_menu {
