@@ -20,7 +20,7 @@
 		
 		
 
-		<link href="<?=base_url() ?>css/<?=$this -> config_theme ?>/styles.css" rel="stylesheet">
+		<link href="<?=base_url() ?>css/<?=$this -> config_theme ?>/styles.css?1.0" rel="stylesheet">
 		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,900,200italic' rel='stylesheet' type='text/css'>
 		<script type="text/javascript" src="//use.typekit.net/tfb0iji.js"></script>
 		<script src="<?=base_url()?>js/modernizr.custom.17475.js"></script>
@@ -156,7 +156,7 @@
 		<script src="<?=base_url() ?>js/elastislide.js"></script>
 		<script src="<?=base_url() ?>js/parallax.js"></script>
 		<script src="<?=base_url() ?>js/flexslider.js"></script>
-		<script src="<?=base_url() ?>js/script.js?2"></script>
+		<script src="<?=base_url() ?>js/script.js?2.1"></script>
 
 	</body>
 </html>
