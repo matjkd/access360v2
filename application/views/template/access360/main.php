@@ -8,7 +8,6 @@
 		<meta name="description" content="">
 		<meta name="author" content="">
 
-		
 		<!-- CSS -->
 		<link href="<?=base_url() ?>css/bootstrap.css" rel="stylesheet">
 		<link href=".<?=base_url() ?>css/bootstrap-responsive.css" rel="stylesheet">
@@ -17,13 +16,11 @@
 		<link href="<?=base_url() ?>css/prettyphoto.css" rel="stylesheet">
 
 		<link href="<?=base_url() ?>css/<?=$this -> config_theme ?>/speed-use.css" rel="stylesheet">
-		
-		
 
 		<link href="<?=base_url() ?>css/<?=$this -> config_theme ?>/styles.css?1.0" rel="stylesheet">
 		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,900,200italic' rel='stylesheet' type='text/css'>
 		<script type="text/javascript" src="//use.typekit.net/tfb0iji.js"></script>
-		<script src="<?=base_url()?>js/modernizr.custom.17475.js"></script>
+		<script src="<?=base_url() ?>js/modernizr.custom.17475.js"></script>
 
 		<script type="text/javascript">
 			try {
@@ -43,27 +40,38 @@
 		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
 		<link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
 		<link rel="shortcut icon" href="../assets/ico/favicon.png">
-	
-	
-	<script type="text/javascript">
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-19623681-3']);
-  _gaq.push(['_trackPageview']);
+		<script type="text/javascript">
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-19623681-3']);
+			_gaq.push(['_trackPageview']);
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
+			(function() {
+				var ga = document.createElement('script');
+				ga.type = 'text/javascript';
+				ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(ga, s);
+			})();
 
-</script>
-	
+		</script>
+
 	</head>
 
 	<body>
 		<input type="hidden" id="baseurl" value="<?= base_url() ?>"/>
 		<div class="bodycontain">
+			<!--[if lt IE 9]>
+			<div class="alert alert-error" style="text-align:center;">
+			You are using a very old version of Internet Explorer. You are not only putting your computer at risk,
+			 but you are unable to view the internet as intended. It is highly recommended you either update it, or use an alternative web browser such as Chrome or Firefox.
+			<br/>
+			Please <a target="_blank" href="http://windows.microsoft.com/en-us/internet-explorer/ie-10-worldwide-languages">Download Microsoft Internet Explorer 10 here</a>
+			 or <a target="_blank" href="https://www.google.com/intl/en/chrome/browser/">Download Google Chrome here</a>
+			</div>
+			<![endif]-->
+
 			<div class="navbar navbar-inverse ">
 
 				<div class="navbar-access">
@@ -82,7 +90,7 @@
 								<li>
 									<a href="<?=base_url() ?>about">About us</a>
 								</li>
-								
+
 								<li>
 									<a href="<?=base_url() ?>experiential">Experiential</a>
 								</li>
@@ -112,11 +120,11 @@
 								<li>
 									<a href="<?=base_url() ?>pos">Point of Sale</a>
 								</li>
-								
+
 								<li>
 									<a href="<?=base_url() ?>casestudies">Case Studies</a>
 								</li>
-								
+
 								<li>
 									<a href="<?=base_url() ?>contact">Contact</a>
 								</li>
@@ -129,7 +137,7 @@
 			</div>
 
 			<div class="container">
-				
+
 				<?=$this -> load -> view('template/access360/alert') ?>
 
 				<!-- Main hero unit for a primary marketing message or call to action -->

@@ -55,6 +55,7 @@
 	}
 
 	.hoverbox {
+		
 		background: #fff;
 		width: 132px;
 		height: 120px;
