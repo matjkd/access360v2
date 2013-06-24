@@ -76,7 +76,9 @@
 
 			if ($this -> form_validation -> run() == FALSE)
 			{
-				echo "fail";
+				$this -> session -> set_flashdata('message', 'Your details were not entered correctly');
+
+				redirect($_SERVER['HTTP_REFERER'], 'refresh');
 			}
 			else
 			{
