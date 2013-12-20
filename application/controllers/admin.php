@@ -16,6 +16,7 @@ class Admin extends MY_Controller {
 
     function index() {
         $data['main_content'] = "admin/dashboard";
+		   $data['mainpage'] = "admin/dashboard";
         $data['pages'] = $this->content_model->get_all_content();
         $data['seo_links'] = $this->content_model->get_seo_links();
         $this->load->vars($data);
@@ -108,7 +109,7 @@ class Admin extends MY_Controller {
     	$data['captcha'] = $this->captcha_model->initiate_captcha();
     	//$data['seo_links'] = $this->content_model->get_seo_links();
     	$data['main_content'] = "admin/edit_case_study";
-    
+    $data['mainpage']= "admin/edit_case_study";
     
     
     	$this->load->vars($data);
@@ -803,7 +804,8 @@ class Admin extends MY_Controller {
     function add_gallery_content() {
         $data['slideshowtoggle'] = "off";
         $data['main_content'] = "admin/add_content";
-        $data['seo_links'] = $this->content_model->get_seo_links();
+		
+		$data['mainpage'] = "admin/add_content";        $data['seo_links'] = $this->content_model->get_seo_links();
         $data['captcha'] = $this->captcha_model->initiate_captcha();
         $data['pages'] = $this->content_model->get_all_content();
         $data['category'] = "gallery";

@@ -93,7 +93,15 @@ class Welcome extends MY_Controller {
 		$this->load->vars($data);
 		$this->load->view('template/main');
 	}
-
+function naughtynice() {
+		$this->load->view("template/xmas/buttons");
+	}
+	function nice() {
+		$this->load->view("template/xmas/nice");
+	}
+function naughty() {
+		$this->load->view("template/xmas/naughty");
+	}
 	function home() {
 
 		$segment_active = $this->uri->segment(3);
@@ -221,6 +229,7 @@ class Welcome extends MY_Controller {
 		$id = 'login';
 		$data['content'] = $this->content_model->get_content($id);
 		$data['main_content'] = "user/login_form";
+		$data['mainpage'] = "user/login_form";
 		$data['title'] = "Login to Exhibitions";
 
 		$data['page'] = "login";
